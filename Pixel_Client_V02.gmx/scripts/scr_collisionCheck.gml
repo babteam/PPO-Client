@@ -27,5 +27,21 @@ if (place_meeting(x, y+vspd, obj_block))
 y += vspd;
 
 //slow us down
-        hspd = hspd*fric;
-        vspd = vspd*fric;
+if (hspd>0 && !rightKey){
+    hspd -= runningAcc;
+    if (hspd<0)
+        hspd = 0;
+} else if (hspd<0 && !leftKey) {
+    hspd += runningAcc;
+    if (hspd>0)
+        hspd = 0;
+}
+if (vspd>0 && !downKey){
+    vspd -= runningAcc;
+    if (vspd<0)
+        vspd = 0;
+} else if (vspd<0 && !upKey) {
+    vspd += runningAcc;
+    if (vspd>0)
+        vspd = 0;
+}
