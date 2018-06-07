@@ -3,11 +3,11 @@ draw_set_font(fnt_small);
 draw_set_colour(c_maroon);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-//draw_text(x, y-50, string(remotePlayerId));
+//draw_text(x, y-130, string(remotePlayerId));
 if(id != obj_localplayer.id)
-    {
-        draw_text(x, y-70, string(remotePlayerName));
-    }
+{
+    draw_text(x, y-90, string(remotePlayerName));
+}
 
 
 
