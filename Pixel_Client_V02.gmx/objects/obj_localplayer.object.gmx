@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//initialize some variables
 grav = 1;
-spd = 15;
+spd = 10;
 jspd = 12;
 hspd = 0;
 vspd = 0;
