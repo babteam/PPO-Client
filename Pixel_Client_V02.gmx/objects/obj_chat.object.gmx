@@ -72,7 +72,7 @@ alarm[0] = room_speed * 3;
 else {
 visible = owner.visible;
 x = owner.x;
-y = owner.y - 110;
+y = owner.y - 90;
      }
 
 </string>
