@@ -54,13 +54,14 @@ legSprite = -1; //used in draw event to attach legs
 
 projectileCount = 0;
 
-colour = make_colour_rgb(255, 255, 255);
+//colour = make_colour_rgb(255, 255, 255);
 
 animRight = spr_walkRight;
 animLeft = spr_walkLeft;
 animDown = spr_walkDown;
 animUp = spr_walkUp;
 
+/*
     playerType = global.playerType;
 switch(global.playerType)
     {
@@ -71,6 +72,8 @@ switch(global.playerType)
         case 2: colour = make_colour_rgb(158, 109, 081);
             break;
     }
+*/
+
 </string>
           </argument>
         </arguments>

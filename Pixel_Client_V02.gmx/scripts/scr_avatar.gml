@@ -13,7 +13,7 @@ if(id != obj_localplayer.id)
 
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
 
-
+playerType = 1;  //decide what playertype means later
 switch(playerType)
     {
         default:
