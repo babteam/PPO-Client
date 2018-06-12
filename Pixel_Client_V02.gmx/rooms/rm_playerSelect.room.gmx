@@ -84,12 +84,7 @@ selectedCard.alpha = 1;</code>
   <instances>
     <instance objName="obj_btn_join" x="768" y="464" name="inst_5815CF68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_btn_back" x="192" y="464" name="inst_253A6F50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_slider" x="416" y="336" name="inst_F91A1A97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_slider" x="416" y="304" name="inst_C739A193" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_slider" x="416" y="272" name="inst_67A854B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_skinColorButton" x="928" y="272" name="inst_BB5BFCC7" locked="0" code="make_colour_rgb(255, 50, 50);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_skinColorButton" x="928" y="304" name="inst_A7E77482" locked="0" code="make_colour_rgb(50, 255, 50);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_skinColorButton" x="928" y="336" name="inst_81F351A4" locked="0" code="make_colour_rgb(50, 50, 255);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_colorWheel" x="736" y="208" name="inst_79790AC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

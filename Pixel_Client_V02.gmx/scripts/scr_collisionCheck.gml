@@ -27,21 +27,60 @@ if (place_meeting(x, y+vspd, obj_block))
 y += vspd;
 
 //slow us down
-if (hspd>0 && !rightKey){
-    hspd -= runningAcc;
-    if (hspd<0)
-        hspd = 0;
-} else if (hspd<0 && !leftKey) {
-    hspd += runningAcc;
-    if (hspd>0)
-        hspd = 0;
-}
-if (vspd>0 && !downKey){
-    vspd -= runningAcc;
-    if (vspd<0)
-        vspd = 0;
-} else if (vspd<0 && !upKey) {
-    vspd += runningAcc;
-    if (vspd>0)
-        vspd = 0;
-}
+if ( hspd>0 )
+    {
+        if ( !rightKey )
+            {
+                hspd -= runningAcc;
+                
+                if (hspd<0)
+                    hspd = 0;
+            }
+        else if (!sprintKey && hspd > walkingMaxSpd)
+            {
+                hspd -= runningAcc;
+            }
+    }
+else if ( hspd<0 )
+    {
+        if ( !leftKey )
+            {
+                hspd += runningAcc;
+                
+                if (hspd>0)
+                    hspd = 0;
+            }
+        else if ( !sprintKey && hspd < -walkingMaxSpd )
+            {
+                hspd += runningAcc;
+            }
+    }
+    
+if ( vspd>0 )
+    {
+        if ( !downKey )
+            {
+                vspd -= runningAcc;
+                
+                if (vspd<0)
+                    vspd = 0;
+            }
+        else if (!sprintKey && vspd > walkingMaxSpd)
+            {
+                vspd -= runningAcc;
+            }
+    }
+else if ( vspd<0 )
+    {
+        if ( !upKey )
+            {
+                vspd += runningAcc;
+                
+                if (vspd>0)
+                    vspd = 0;
+            }
+        else if ( !sprintKey && vspd < -walkingMaxSpd )
+            {
+                vspd += runningAcc;
+            }
+    }
