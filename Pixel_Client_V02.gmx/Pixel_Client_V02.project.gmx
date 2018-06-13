@@ -26,7 +26,7 @@
       <sprites name="player customize">
         <sprite>sprites\spr_colorslider</sprite>
         <sprite>sprites\spr_skinColorButton</sprite>
-        <sprite>sprites\spr_colorWheel</sprite>
+        <sprite>sprites\spr_colorPicker</sprite>
       </sprites>
     </sprites>
     <sprites name="player">
@@ -151,7 +151,8 @@
         <objects name="player customize">
           <object>objects\obj_slider</object>
           <object>objects\obj_skinColorButton</object>
-          <object>objects\obj_colorWheel</object>
+          <object>objects\obj_colorPicker</object>
+          <object>objects\obj_customizeMessage</object>
         </objects>
         <object>objects\obj_btn_join</object>
         <object>objects\obj_btn_exit</object>
