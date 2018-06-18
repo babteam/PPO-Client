@@ -182,6 +182,7 @@
       <object>objects\obj_catapult</object>
       <object>objects\obj_catapultFire</object>
     </objects>
+    <object>objects\obj_musicPauser</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Startup">
