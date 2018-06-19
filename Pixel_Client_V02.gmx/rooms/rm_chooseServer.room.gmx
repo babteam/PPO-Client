@@ -13,6 +13,10 @@
   <code>scr_showNotification("Choose a Server!");
 
 global.inGame = 0;
+
+global.hairCustom = spr_hair_pigtails;
+global.outfitCustom = spr_outfit_plainDress;
+
 audio_play_sound(snd_lobby, 10, true);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

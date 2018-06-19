@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>13002805</colour>
   <showcolour>-1</showcolour>
-  <code>var s = instance_create(270, 192, obj_playerSelect);
+  <code>//var s = instance_create(270, 192, obj_playerSelect);
     
 
 /*
@@ -85,7 +85,14 @@ selectedCard.alpha = 1;</code>
     <instance objName="obj_btn_join" x="768" y="464" name="inst_5815CF68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_btn_back" x="192" y="464" name="inst_253A6F50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_customizeMessage" x="128" y="32" name="inst_375B4DCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_colorPicker" x="608" y="192" name="inst_61C01634" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_colorPicker" x="622" y="146" name="inst_61C01634" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_playerSelect" x="288" y="240" name="inst_004268B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_customize_buttons" x="128" y="240" name="inst_B7531A96" locked="0" code="image_index = 1;&#xA;button = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_customize_buttons" x="128" y="176" name="inst_572A728F" locked="0" code="image_index = 3;&#xA;button = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_customize_buttons" x="128" y="304" name="inst_CBCE049C" locked="0" code="image_index = 4;&#xA;button = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_customize_buttons" x="448" y="240" name="inst_22C4F8F7" locked="0" code="image_index = 2;&#xA;button = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_customize_buttons" x="448" y="176" name="inst_33A894FE" locked="0" code="image_index = 3;&#xA;button = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_customize_buttons" x="448" y="304" name="inst_7EE02ECE" locked="0" code="image_index = 4;&#xA;button = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

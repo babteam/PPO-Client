@@ -27,10 +27,22 @@
         <sprite>sprites\spr_colorslider</sprite>
         <sprite>sprites\spr_skinColorButton</sprite>
         <sprite>sprites\spr_colorPicker</sprite>
+        <sprite>sprites\spr_customize_button</sprite>
       </sprites>
     </sprites>
     <sprites name="player">
       <sprites name="base">
+        <sprites name="Diapers">
+          <sprite>sprites\spr_diaper_regular</sprite>
+        </sprites>
+        <sprites name="Outfits">
+          <sprite>sprites\spr_outfit_plainDress</sprite>
+          <sprite>sprites\spr_outfit_TEMP</sprite>
+        </sprites>
+        <sprites name="Hair">
+          <sprite>sprites\spr_hair_pigtails</sprite>
+          <sprite>sprites\spr_hair_ponytail</sprite>
+        </sprites>
         <sprites name="old_sprite">
           <sprite>sprites\spr_walkRight</sprite>
           <sprite>sprites\spr_walkLeft</sprite>
@@ -38,7 +50,6 @@
           <sprite>sprites\spr_walkUp</sprite>
         </sprites>
         <sprite>sprites\spr_paperdoll_skin1</sprite>
-        <sprite>sprites\spr_paperdoll_hair</sprite>
       </sprites>
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
@@ -113,7 +124,6 @@
       <script>scripts\scr_rightCheck.gml</script>
       <script>scripts\scr_downCheck.gml</script>
       <script>scripts\scr_upCheck.gml</script>
-      <script>scripts\scr_setSprite.gml</script>
       <script>scripts\scr_characterSwap.gml</script>
       <script>scripts\scr_standCheck.gml</script>
       <script>scripts\scr_validateEmailBasic.gml</script>
@@ -166,6 +176,7 @@
       </objects>
       <object>objects\obj_playerSelect</object>
       <object>objects\obj_playerList</object>
+      <object>objects\obj_customize_buttons</object>
     </objects>
     <object>objects\obj_remoteplayer</object>
     <object>objects\obj_localplayer</object>

@@ -130,7 +130,6 @@ switch(global.playerType)
         scr_upCheck();
         scr_collisionCheck();
         scr_standCheck();
-        //scr_setSprite();
     }
 else
     {
@@ -304,110 +303,11 @@ if(state != "standing")
     }
 if(animSpeed &gt;= 40) { animSpeed = 0; }
 
+
 //=============================================================================
-//draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-//    ^--  not sure if this is needed since its already inside of scr_avatar()
-
 scr_avatar();
-/*
-switch(dir)
-    {
-        case "right":
-                    draw_sprite_ext(spr_walkRight, frames, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                    break;
-        case "left":
-                    draw_sprite_ext(spr_walkLeft, frames, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                    break;
-        case "down":
-                    draw_sprite_ext(spr_walkDown, frames, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                    break;
-        case "up":
-                    draw_sprite_ext(spr_walkUp, frames, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                    break;
-    }
-*/
 
 
-/*
-switch(frames)
-{
-    case 1:
-        switch(dir)
-        {
-            case "right":
-                draw_sprite_ext(spr_babLegs, 2, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                break;
-            case "left":
-                
-                break;
-            case "down":
-                
-                break;
-            case "up":
-                
-                break;
-        }
-        break;
-        
-    case 2:
-        
-        break;
-}
-
-switch(legSprite)
-{
-    case -2: //jump legs
-        draw_sprite_ext(spr_babLegs, 2, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-        legSpriteCurrent = 2;
-        break;
-    case -1: //stand legs
-        draw_sprite_ext(spr_babLegs, 0, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-        legSpriteCurrent = 0;
-        break;
-    default: //walking
-        legSprite++;
-        if(legSprite &lt; 20)
-        {
-                if(legSprite &gt; 8)
-                    {
-                        draw_sprite_ext(spr_babLegs, 1, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                        legSpriteCurrent = 1;
-                            if(legSprite &gt; 15) 
-                                {
-                                    legSprite = 0;
-                                }
-                    }
-                else
-                    {
-                        draw_sprite_ext(spr_babLegs, 0, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                        legSpriteCurrent = 0;
-                    }
-        }
-        else
-        {
-                if(legSprite &gt; 25)
-                    {
-                        draw_sprite_ext(spr_babLegs, 1, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                        legSpriteCurrent = 1;
-                            if(legSprite &gt; 29) 
-                                {
-                                    legSprite = 20; 
-                                }
-                    }
-                else
-                    {
-                        draw_sprite_ext(spr_babLegs, 0, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                        legSpriteCurrent = 0;
-                    }
-        }
-        break;
-}
-
-//draw the diaper
-//subimage is just 0 until I add more
-draw_sprite_ext(spr_babDiaper, 0, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-*/
-//draw the torso
 
 </string>
           </argument>
