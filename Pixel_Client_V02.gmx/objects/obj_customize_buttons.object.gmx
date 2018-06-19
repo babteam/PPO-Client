@@ -60,7 +60,7 @@ switch (button)
         break;    
     
         case 3: //hair up
-            if ( obj_playerSelect.hair &lt;1 )
+            if ( obj_playerSelect.hair &lt;2 )
                 obj_playerSelect.hair++;
             else obj_playerSelect.hair = 0;
         break;
@@ -68,7 +68,7 @@ switch (button)
         case 4: //hair down
             if ( obj_playerSelect.hair &gt; 0 )
                 obj_playerSelect.hair--;
-            else obj_playerSelect.hair = 1;
+            else obj_playerSelect.hair = 2;
         break;
         
         case 5: //outfit up

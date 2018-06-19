@@ -29,7 +29,7 @@ y += vspd;
 //slow us down
 if ( hspd>0 )
     {
-        if ( !rightKey )
+        if ( !rightKey || leftKey )
             {
                 hspd -= runningAcc;
                 
@@ -43,7 +43,7 @@ if ( hspd>0 )
     }
 else if ( hspd<0 )
     {
-        if ( !leftKey )
+        if ( !leftKey || rightKey )
             {
                 hspd += runningAcc;
                 
@@ -58,7 +58,7 @@ else if ( hspd<0 )
     
 if ( vspd>0 )
     {
-        if ( !downKey )
+        if ( !downKey || upKey )
             {
                 vspd -= runningAcc;
                 
@@ -72,7 +72,7 @@ if ( vspd>0 )
     }
 else if ( vspd<0 )
     {
-        if ( !upKey )
+        if ( !upKey || downKey )
             {
                 vspd += runningAcc;
                 

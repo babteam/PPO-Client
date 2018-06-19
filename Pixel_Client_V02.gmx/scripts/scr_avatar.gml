@@ -21,23 +21,23 @@ switch(playerType)
                 {
                     case "right":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames + 6, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(global.hairCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(global.outfitCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(hairCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
                                 break;
                     case "left":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames + 9, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(global.hairCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(global.outfitCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(hairCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
                                 break;
                     case "down":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(global.hairCustom, frames, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(global.outfitCustom, frames, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(hairCustom, frames, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
                                 break;
                     case "up":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames + 3, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(global.hairCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(global.outfitCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(hairCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
                                 break;
                 }
                 break;

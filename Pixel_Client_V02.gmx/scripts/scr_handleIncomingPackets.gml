@@ -114,7 +114,9 @@ switch(msgid)
         var pId = buffer_read(buffer, buffer_u32);
         var xx = buffer_read(buffer, buffer_f32);
         var yy = buffer_read(buffer, buffer_f32);
-        //var spriteNumber = buffer_read(buffer, buffer_u8);
+            var hair = buffer_read(buffer, buffer_u16);
+            var outfit = buffer_read(buffer, buffer_u16);
+            var colour = buffer_read(buffer, buffer_u32);
         var remoteFrames = buffer_read(buffer, buffer_u8);
         var d = buffer_read(buffer, buffer_u8);
         var rooms = buffer_read(buffer, buffer_u32);
@@ -140,6 +142,9 @@ switch(msgid)
                         self.xx = xx;
                         self.yy = yy;
                         frames = remoteFrames;
+                        hairCustom = hair;
+                        outfitCustom = outfit;
+                        self.colour = colour;
                         
                         switch (d)
                         {

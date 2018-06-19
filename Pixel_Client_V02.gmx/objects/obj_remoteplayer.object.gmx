@@ -36,6 +36,9 @@ image_speed = 0;
 xx = 0;
 yy = 0;
 
+hairCustom = 0;
+outfitCustom = 0;
+
 colour = make_colour_rgb(255, 255, 255);
 
 
@@ -66,28 +69,6 @@ colour = make_colour_rgb(255, 255, 255);
 
 x = (x+xx)*0.5;
 y = (y+yy)*0.5;
-
-switch(playerType)
-{
-    case 0:
-        colour = make_colour_rgb(255, 255, 255);
-        break;
-    case 1:
-        colour = make_colour_rgb(255, 255, 120);
-        break;
-    case 2:
-        colour = make_colour_rgb(255, 120, 255);
-        break;
-    case 3:
-        colour = make_colour_rgb(255, 180, 120);
-        break;
-    case 4:
-        colour = make_colour_rgb(255, 120, 120);
-        break;
-    case 5:
-        colour = make_colour_rgb(120, 255, 120);
-        break;
-}
 </string>
           </argument>
         </arguments>

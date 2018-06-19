@@ -46,33 +46,13 @@ terminalVelocity = 50;
 animSpeed = 0;
 frames=0;
 
+hairCustom = global.hairCustom;
+outfitCustom = global.outfitCustom;
+
 catapult = 0;
 
-legSprite = -1; //used in draw event to attach legs
-//legSpriteCurrent = 0; //used to give the id number of legs to the server
-//diaperSprite = 0; //same as above but with dips
 
 projectileCount = 0;
-
-//colour = make_colour_rgb(255, 255, 255);
-
-animRight = spr_walkRight;
-animLeft = spr_walkLeft;
-animDown = spr_walkDown;
-animUp = spr_walkUp;
-
-/*
-    playerType = global.playerType;
-switch(global.playerType)
-    {
-        case 0: colour = make_colour_rgb(254, 219, 200);
-            break;
-        case 1: colour = make_colour_rgb(192, 146, 134);
-            break;
-        case 2: colour = make_colour_rgb(158, 109, 081);
-            break;
-    }
-*/
 
 </string>
           </argument>
@@ -201,7 +181,9 @@ buffer_write(global.buffer, buffer_u8, 7);
 buffer_write(global.buffer, buffer_u32, global.playerId);
 buffer_write(global.buffer, buffer_f32, x);
 buffer_write(global.buffer, buffer_f32, y);
-//buffer_write(global.buffer, buffer_u8, sprite_index);
+    buffer_write(global.buffer, buffer_u16, hairCustom);
+    buffer_write(global.buffer, buffer_u16, outfitCustom);
+    buffer_write(global.buffer, buffer_u32, colour);
 buffer_write(global.buffer, buffer_u8, frames);
 buffer_write(global.buffer, buffer_u8, d);
 buffer_write(global.buffer, buffer_u32, room);

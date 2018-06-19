@@ -1,5 +1,5 @@
 //if we are moving right
-if (upKey && !downKey)
+if (upKey)
 {
         if (!downKey) dir = "up";
     var maxSpeed = 0;
