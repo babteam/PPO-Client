@@ -12,6 +12,7 @@
   <showcolour>-1</showcolour>
   <code>scr_showNotification("Choose a Server!");
 
+global.inGame = 0;
 audio_play_sound(snd_lobby, 10, true);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

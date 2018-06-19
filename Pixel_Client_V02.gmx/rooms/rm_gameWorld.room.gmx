@@ -7,30 +7,37 @@
   <hsnap>2</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>//texture_set_interpolation(false);
 
-scr_showNotification("Welcome to Bab Land!");
-
-audio_stop_sound(snd_lobby);
-audio_play_sound(snd_house, 10, true);
-
-global.inGame = 1;
+if !audio_is_playing(snd_house)
+    {
+        audio_stop_all();
+        audio_play_sound(snd_house, 10, true);
+    }
 
 //create our player randomly in the room
 //instance_create(100, 250, obj_localplayer);
 
+if !object_exists(obj_screenFade)
 instance_create(0, 0, obj_screenFade);
 
-//tell the server we're joining the game
-buffer_seek(global.buffer, buffer_seek_start, 0);
-buffer_write(global.buffer, buffer_u8, 6);
-buffer_write(global.buffer, buffer_u32, global.playerId);
-buffer_write(global.buffer, buffer_u8, global.playerType); //sending player color
-buffer_write(global.buffer, buffer_u8, 1);
-network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer));</code>
+if(global.inGame == 0)
+    {
+        scr_showNotification("Welcome to Bab Land!");
+    
+        //tell the server we're joining the game
+        buffer_seek(global.buffer, buffer_seek_start, 0);
+        buffer_write(global.buffer, buffer_u8, 6);
+        buffer_write(global.buffer, buffer_u32, global.playerId);
+        buffer_write(global.buffer, buffer_u8, global.playerType); //sending player color
+        buffer_write(global.buffer, buffer_u8, 1);
+        network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer));
+        
+        global.inGame = 1;
+    }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
