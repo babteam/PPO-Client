@@ -42,7 +42,7 @@
         </sprites>
         <sprites name="Hair">
           <sprite>sprites\spr_hair_pigtails</sprite>
-          <sprite>sprites\spr_hair_ponytail</sprite>
+          <sprite>sprites\spr_hair_bigBun</sprite>
           <sprite>sprites\spr_hair_shortJaged</sprite>
         </sprites>
         <sprites name="old_sprite">
