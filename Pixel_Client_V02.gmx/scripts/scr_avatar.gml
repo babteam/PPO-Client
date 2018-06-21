@@ -11,7 +11,8 @@ if(id != obj_localplayer.id)
 
 
 
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
+//- draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, global.skinCol, image_alpha);
+//-  The shadow already drew itself what was ^ that for?
 
 playerType = 1;  //decide what playertype means later
 switch(playerType)
@@ -20,24 +21,24 @@ switch(playerType)
             switch(dir)
                 {
                     case "right":
-                                draw_sprite_ext(spr_paperdoll_skin1, frames + 6, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(hairCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(spr_paperdoll_skin1, frames + 6, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
+                                draw_sprite_ext(hairCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                     case "left":
-                                draw_sprite_ext(spr_paperdoll_skin1, frames + 9, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(hairCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(spr_paperdoll_skin1, frames + 9, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
+                                draw_sprite_ext(hairCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                     case "down":
-                                draw_sprite_ext(spr_paperdoll_skin1, frames, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(hairCustom, frames, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(spr_paperdoll_skin1, frames, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
+                                draw_sprite_ext(hairCustom, frames, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                     case "up":
-                                draw_sprite_ext(spr_paperdoll_skin1, frames + 3, x, y, image_xscale, image_yscale, image_angle, colour, image_alpha);
-                                draw_sprite_ext(hairCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+                                draw_sprite_ext(spr_paperdoll_skin1, frames + 3, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
+                                draw_sprite_ext(hairCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(outfitCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                 }
                 break;

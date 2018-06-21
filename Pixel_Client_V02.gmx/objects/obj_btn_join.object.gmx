@@ -25,11 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.skinCol = obj_playerSelect.skinCol;
+            <string>
 
 room_goto(rm_gameWorld);
 var s = instance_create(80, 248, obj_localplayer);
-    s.colour = obj_playerSelect.skinCol;
+    //s.colour = obj_playerSelect.skinCol;
+    
+    
+//=============================================================
+
+    
+//texture_set_interpolation(false);
+
+if !audio_is_playing(snd_house)
+    {
+        audio_stop_all();
+        audio_play_sound(snd_house, 10, true);
+    }
+
+//create our player randomly in the room
+//instance_create(100, 250, obj_localplayer);
+
+if !object_exists(obj_screenFade)
+instance_create(0, 0, obj_screenFade);
+
+if(global.inGame == 0)
+    {
+        scr_showNotification("Welcome to Bab Land!");
+    
+        //tell the server we're joining the game
+        buffer_seek(global.buffer, buffer_seek_start, 0);
+        buffer_write(global.buffer, buffer_u8, 6);
+        buffer_write(global.buffer, buffer_u32, global.playerId);
+        buffer_write(global.buffer, buffer_u8, global.playerType); //sending player color
+        buffer_write(global.buffer, buffer_u8, 1);
+        network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer));
+        
+        global.inGame = 1;
+    }
 </string>
           </argument>
         </arguments>

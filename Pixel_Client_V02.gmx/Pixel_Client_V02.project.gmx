@@ -37,13 +37,21 @@
           <sprite>sprites\spr_diaper_regular_wet</sprite>
         </sprites>
         <sprites name="Outfits">
-          <sprite>sprites\spr_outfit_plainDress</sprite>
-          <sprite>sprites\spr_outfit_TEMP</sprite>
+          <sprite>sprites\spr_outfit_START</sprite>
+          <sprites name="CustomOutfits">
+            <sprite>sprites\spr_outfit_plainDress</sprite>
+            <sprite>sprites\spr_outfit_TEMP</sprite>
+          </sprites>
+          <sprite>sprites\spr_outfit_STOP</sprite>
         </sprites>
         <sprites name="Hair">
-          <sprite>sprites\spr_hair_pigtails</sprite>
-          <sprite>sprites\spr_hair_bigBun</sprite>
-          <sprite>sprites\spr_hair_shortJaged</sprite>
+          <sprite>sprites\spr_hair_START</sprite>
+          <sprites name="CustomHair">
+            <sprite>sprites\spr_hair_pigtails</sprite>
+            <sprite>sprites\spr_hair_bigBun</sprite>
+            <sprite>sprites\spr_hair_shortJaged</sprite>
+          </sprites>
+          <sprite>sprites\spr_hair_STOP</sprite>
         </sprites>
         <sprites name="old_sprite">
           <sprite>sprites\spr_walkRight</sprite>

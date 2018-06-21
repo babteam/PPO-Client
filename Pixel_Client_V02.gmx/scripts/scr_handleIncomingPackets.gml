@@ -117,6 +117,8 @@ switch(msgid)
             var hair = buffer_read(buffer, buffer_u16);
             var outfit = buffer_read(buffer, buffer_u16);
             var colour = buffer_read(buffer, buffer_u32);
+            var hairColour = buffer_read(buffer, buffer_u32);
+            var outfitColour = buffer_read(buffer, buffer_u32);
         var remoteFrames = buffer_read(buffer, buffer_u8);
         var d = buffer_read(buffer, buffer_u8);
         var rooms = buffer_read(buffer, buffer_u32);
@@ -144,7 +146,9 @@ switch(msgid)
                         frames = remoteFrames;
                         hairCustom = hair;
                         outfitCustom = outfit;
-                        self.colour = colour;
+                        self.skinCol = colour;
+                        self.hairCol = hairColour;
+                        self.outfitCol = outfitColour;
                         
                         switch (d)
                         {

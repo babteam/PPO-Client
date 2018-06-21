@@ -25,13 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>selected = false;
-//alpha = 0.5;
-//col = 0;
-skinCol = make_colour_rgb(254, 219, 200);
-//image_speed = 0;
-
-//more creation code in playerSelect room code
+            <string>global.skinCol = make_colour_rgb(254, 219, 200);
+global.hairCol = make_colour_rgb(129, 104, 065);
+global.outfitCol = make_colour_rgb(231, 125, 200);
 
 hair = global.hairCustom - spr_hair_pigtails;
 outfit = global.outfitCustom - spr_outfit_plainDress;
@@ -57,17 +53,7 @@ outfit = global.outfitCustom - spr_outfit_plainDress;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-/*
-with (obj_playerSelect)
-{
-    selected = false;
-    alpha = 0.5;
-}
-
-selected = true;
-alpha = 1;
-global.playerType = skin_tone;
+            <string>obj_colorPicker.coloring = "skin";
 </string>
           </argument>
         </arguments>
@@ -92,10 +78,10 @@ global.playerType = skin_tone;
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
     
-draw_sprite_ext(spr_paperdoll_skin1, 0, x, y+40, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
+draw_sprite_ext(spr_paperdoll_skin1, 0, x, y+40, image_xscale, image_yscale, image_angle, global.skinCol, image_alpha);
 
-draw_sprite_ext(global.hairCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-draw_sprite_ext(global.outfitCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(global.hairCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.hairCol, image_alpha);
+draw_sprite_ext(global.outfitCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.outfitCol, image_alpha);
 
 </string>
           </argument>

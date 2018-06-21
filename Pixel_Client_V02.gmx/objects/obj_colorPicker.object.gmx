@@ -8,6 +8,70 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>message = "Editing Skin Color";
+
+coloring = "skin";
+colorMessage = "skin"; //called in step event to send a message on variable change
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(coloring != colorMessage)
+    {
+        switch (coloring)
+            {
+                case "skin":
+                    message = "Editing Skin Color";
+                    break;
+                case "hair":
+                    message = "Editing Hair Color";
+                    break;
+                case "outfit":
+                    message = "Editing Outfit Color";
+                    break;
+            }
+        colorMessage = coloring;
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
@@ -31,7 +95,48 @@ var blue = (col &gt;&gt; 16) &amp; 255;
 var green = (col &gt;&gt; 8) &amp; 255;
 var red = col &amp; 255;
 
-obj_playerSelect.skinCol = make_colour_rgb(red, green, blue);
+
+switch (coloring)
+    {
+        case "skin":
+            global.skinCol = make_colour_rgb(red, green, blue);
+            break;
+        case "hair":
+            global.hairCol = make_colour_rgb(red, green, blue);
+            break;
+        case "outfit":
+            global.outfitCol = make_colour_rgb(red, green, blue);
+            break;
+    }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+draw_set_font(fnt_main);
+draw_set_valign(fa_middle);
+draw_set_halign(fa_left);
+draw_text_colour(x, y -30, message, c_silver, c_silver, c_silver, c_silver, image_alpha);
 </string>
           </argument>
         </arguments>

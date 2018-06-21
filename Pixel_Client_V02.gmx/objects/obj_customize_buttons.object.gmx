@@ -29,6 +29,9 @@
 
 button = 0;
 image_speed = 0;
+
+hairMax = spr_hair_STOP - spr_hair_START - 2;
+outfitMax = spr_outfit_STOP - spr_outfit_START - 2;
 </string>
           </argument>
         </arguments>
@@ -58,9 +61,17 @@ switch (button)
         default:
             //nothing
         break;    
+//=====================================================
+        case 1:
+            obj_colorPicker.coloring = "hair";
+            break;
+        case 2:
+            obj_colorPicker.coloring = "outfit";
+            break;
+//=====================================================
     
         case 3: //hair up
-            if ( obj_playerSelect.hair &lt;2 )
+            if ( obj_playerSelect.hair &lt; hairMax )
                 obj_playerSelect.hair++;
             else obj_playerSelect.hair = 0;
         break;
@@ -68,11 +79,11 @@ switch (button)
         case 4: //hair down
             if ( obj_playerSelect.hair &gt; 0 )
                 obj_playerSelect.hair--;
-            else obj_playerSelect.hair = 2;
+            else obj_playerSelect.hair = hairMax;
         break;
         
         case 5: //outfit up
-            if ( obj_playerSelect.outfit &lt;1 )
+            if ( obj_playerSelect.outfit &lt; outfitMax )
                 obj_playerSelect.outfit++;
             else obj_playerSelect.outfit = 0;
         break;
@@ -80,12 +91,12 @@ switch (button)
         case 6: //outfit down
             if ( obj_playerSelect.outfit &gt; 0 )
                 obj_playerSelect.outfit--;
-            else obj_playerSelect.outfit = 1;
+            else obj_playerSelect.outfit = outfitMax;
         break;
     }
     
-global.hairCustom = spr_hair_pigtails + obj_playerSelect.hair;
-global.outfitCustom = spr_outfit_plainDress + obj_playerSelect.outfit;
+global.hairCustom = spr_hair_START+1 + obj_playerSelect.hair;
+global.outfitCustom = spr_outfit_START+1 + obj_playerSelect.outfit;
 </string>
           </argument>
         </arguments>

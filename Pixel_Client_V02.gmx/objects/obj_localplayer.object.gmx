@@ -51,6 +51,9 @@ frames=0;
 
 hairCustom = global.hairCustom;
 outfitCustom = global.outfitCustom;
+skinCol = global.skinCol;
+hairCol = global.hairCol;
+outfitCol = global.outfitCol;
 
 catapult = 0;
 
@@ -186,7 +189,9 @@ buffer_write(global.buffer, buffer_f32, x);
 buffer_write(global.buffer, buffer_f32, y);
     buffer_write(global.buffer, buffer_u16, hairCustom);
     buffer_write(global.buffer, buffer_u16, outfitCustom);
-    buffer_write(global.buffer, buffer_u32, colour);
+    buffer_write(global.buffer, buffer_u32, global.skinCol);
+    buffer_write(global.buffer, buffer_u32, global.hairCol);
+    buffer_write(global.buffer, buffer_u32, global.outfitCol);
 buffer_write(global.buffer, buffer_u8, frames);
 buffer_write(global.buffer, buffer_u8, d);
 buffer_write(global.buffer, buffer_u32, room);
