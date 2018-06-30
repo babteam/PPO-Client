@@ -33,13 +33,19 @@
     <sprites name="player">
       <sprites name="base">
         <sprites name="Diapers">
-          <sprite>sprites\spr_diaper_regular</sprite>
-          <sprite>sprites\spr_diaper_regular_wet</sprite>
+          <sprite>sprites\spr_diaper_START</sprite>
+          <sprites name="CustomDiaper">
+            <sprite>sprites\spr_diaper_regular</sprite>
+            <sprite>sprites\spr_diaper_regular_wet</sprite>
+            <sprite>sprites\spr_diaper_regular_soggy</sprite>
+          </sprites>
+          <sprite>sprites\spr_diaper_STOP</sprite>
         </sprites>
         <sprites name="Outfits">
           <sprite>sprites\spr_outfit_START</sprite>
           <sprites name="CustomOutfits">
             <sprite>sprites\spr_outfit_plainDress</sprite>
+            <sprite>sprites\spr_outfit_plainShirt</sprite>
             <sprite>sprites\spr_outfit_TEMP</sprite>
           </sprites>
           <sprite>sprites\spr_outfit_STOP</sprite>
@@ -62,6 +68,9 @@
         <sprite>sprites\spr_paperdoll_skin1</sprite>
       </sprites>
       <sprite>sprites\spr_shadow</sprite>
+      <sprites name="playerGUI">
+        <sprite>sprites\spr_peeMeter</sprite>
+      </sprites>
     </sprites>
     <sprites name="playerBab">
       <sprite>sprites\spr_babTorso</sprite>
@@ -73,6 +82,9 @@
       <sprite>sprites\spr_ball</sprite>
       <sprite>sprites\spr_catapult</sprite>
       <sprite>sprites\spr_catapult_arm</sprite>
+      <sprites name=" blank NPCs">
+        <sprite>sprites\spr_duckMerchant</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_playerSelect</sprite>
     <sprite>sprites\spr_projectile</sprite>
@@ -83,6 +95,7 @@
     <sprite>sprites\spr_Blircle</sprite>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_roomBlock</sprite>
+    <sprite>sprites\spr_npcBlock</sprite>
     <sprite>sprites\spr_screenFade</sprite>
   </sprites>
   <backgrounds name="background">
@@ -106,6 +119,7 @@
       <background>background\back_landZoneFore</background>
       <background>background\back_crossPath</background>
       <background>background\back_crossPathFore</background>
+      <background>background\back_landingHouse</background>
     </backgrounds>
     <backgrounds name="northPaths">
       <background>background\back_northCrossPathCats</background>
@@ -118,7 +132,6 @@
         <background>background\back_southMazeOverlay</background>
       </backgrounds>
       <background>background\back_northNorthPath</background>
-      <background>background\background19</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -134,17 +147,20 @@
       <script>scripts\scr_rightCheck.gml</script>
       <script>scripts\scr_downCheck.gml</script>
       <script>scripts\scr_upCheck.gml</script>
-      <script>scripts\scr_characterSwap.gml</script>
       <script>scripts\scr_standCheck.gml</script>
       <script>scripts\scr_validateEmailBasic.gml</script>
+      <script>scripts\scr_diaperSystem.gml</script>
     </scripts>
     <script>scripts\scr_getBufferSize.gml</script>
     <scripts name="Useless Scripts">
       <script>scripts\scr_oldKeyChecks.gml</script>
       <script>scripts\script12.gml</script>
+      <script>scripts\scr_characterSwap.gml</script>
     </scripts>
     <script>scripts\scr_catapult.gml</script>
     <script>scripts\scr_avatar.gml</script>
+    <script>scripts\scr_textShadow.gml</script>
+    <script>scripts\__notes__.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
@@ -152,8 +168,10 @@
     <font>fonts\fnt_chat</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_block</object>
-    <object>objects\obj_blircle</object>
+    <objects name="walls">
+      <object>objects\obj_block</object>
+      <object>objects\obj_blircle</object>
+    </objects>
     <object>objects\obClient</object>
     <object>objects\obj_message</object>
     <objects name="menus">
@@ -173,6 +191,8 @@
           <object>objects\obj_skinColorButton</object>
           <object>objects\obj_colorPicker</object>
           <object>objects\obj_customizeMessage</object>
+          <object>objects\obj_customize_buttons</object>
+          <object>objects\obj_playerSelect</object>
         </objects>
         <object>objects\obj_btn_join</object>
         <object>objects\obj_btn_exit</object>
@@ -184,19 +204,26 @@
         <object>objects\obj_btn_download</object>
         <object>objects\obj_fullscreenCheck</object>
       </objects>
-      <object>objects\obj_playerSelect</object>
-      <object>objects\obj_playerList</object>
-      <object>objects\obj_customize_buttons</object>
+      <objects name="mainGUI">
+        <object>objects\obj_playerList</object>
+        <object>objects\obj_peeMeter</object>
+      </objects>
     </objects>
     <object>objects\obj_remoteplayer</object>
+    <object>objects\obj_localInteract</object>
     <object>objects\obj_localplayer</object>
     <object>objects\obj_chat</object>
     <object>objects\obj_npc</object>
-    <object>objects\obj_projectile</object>
-    <object>objects\obj_remoteProjectile</object>
+    <objects name="Weapons">
+      <objects name="projectiles">
+        <object>objects\obj_projectile</object>
+        <object>objects\obj_remoteProjectile</object>
+      </objects>
+    </objects>
     <object>objects\obj_ball</object>
     <object>objects\obj_overlayImage</object>
     <object>objects\obj_roomBlock</object>
+    <object>objects\obj_npcBlock</object>
     <object>objects\obj_screenFade</object>
     <object>objects\obj_backFollow</object>
     <objects name="catapultGroup">
@@ -204,6 +231,9 @@
       <object>objects\obj_catapultFire</object>
     </objects>
     <object>objects\obj_musicPauser</object>
+    <objects name="blank NPCs">
+      <object>objects\obj_npc_duckMerchant</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Startup">

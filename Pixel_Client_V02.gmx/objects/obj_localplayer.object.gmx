@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//initialize some variables
+            <string>///initialize some variables
 
 gamepad_set_axis_deadzone (0, 0.25);
 
@@ -34,13 +34,13 @@ spd = 10;
 jspd = 12;
 hspd = 0;
 vspd = 0;
-xspd=0;
-yspd=0;
+//- xspd=0;
+// -yspd=0;
 state = "standing";
 dir = "right";
 jumping = false;
 falling = false;
-fric = 0.7;
+fric = 0.5; //custom friction variable
 walkingAcc = 2.5;
 walkingMaxSpd = spd*0.5;
 runningAcc = 5;
@@ -49,16 +49,29 @@ terminalVelocity = 50;
 animSpeed = 0;
 frames=0;
 
+
+//==========================================================
 hairCustom = global.hairCustom;
 outfitCustom = global.outfitCustom;
+diaperCustom = spr_diaper_START;
 skinCol = global.skinCol;
 hairCol = global.hairCol;
 outfitCol = global.outfitCol;
+
+//==========================================================
+diaper = 0;
+pee = 0;
+maxPee = random_range(9000, 11000); //about 5 to 6 minutes
+hydration = 1;  //multiplier for how fast the previous reaches max
 
 catapult = 0;
 
 
 projectileCount = 0;
+
+//===========================================================
+
+instance_create(x, y, obj_localInteract);
 
 </string>
           </argument>
@@ -116,6 +129,7 @@ projectileCount = 0;
         scr_upCheck();
         scr_collisionCheck();
         scr_standCheck();
+        scr_diaperSystem();
     }
 else
     {
@@ -249,6 +263,35 @@ y = ystart;
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Diaper meter draw
+
+if(diaperCustom &gt; spr_diaper_START)
+    {
+        var tempIMG = floor((pee / maxPee) * 75);
+        draw_sprite_ext(spr_peeMeter, tempIMG, window_get_width()*0.9, 0 + window_get_height()*0.1, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -266,7 +309,8 @@ y = ystart;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var xx = 0;
+            <string>/*-
+var xx = 0;
 var yy = 0;
 
 if(xspd&gt;0) { xx = xspd; }
@@ -276,6 +320,7 @@ if(yspd&gt;0) { yy = yspd; }
 
 if(xx&gt;yy) { animSpeed += xx; }
     else { animSpeed += yy; }
+*/
     
 
 if(animSpeed &lt; 10 ) { frames = 0; }    
@@ -321,7 +366,30 @@ scr_avatar();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//
+            <string>diaperCustom = diaperCustom + 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="122">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>pee = pee +1000;
 </string>
           </argument>
         </arguments>

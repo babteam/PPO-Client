@@ -25,39 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_small);
-draw_set_colour(c_white);
+            <string>draw_set_font(fnt_small); // textShadow doesn't set font
 
 // draw names
 var xx = 200;
 var yy = 60;
 
-draw_text(xx, yy, "NAME");
+scr_textShadow(xx, yy, "NAME");
 yy += 40;
 
-draw_text(xx, yy, string(global.name));
+scr_textShadow(xx, yy, string(global.name));
 for (var i = 0; i &lt; instance_number(obj_remoteplayer); i++)
 {
     yy += 30;
     
     var remotePlayer = instance_find(obj_remoteplayer, i);
-    draw_text(xx, yy, string(remotePlayer.remotePlayerName));
+    scr_textShadow(xx, yy, string(remotePlayer.remotePlayerName));
 }
 
 // draw latencies
 xx = 400;
 yy = 60;
 
-draw_text(xx, yy, "LATENCY");
+scr_textShadow(xx, yy, "LATENCY");
 yy += 40;
 
-draw_text(xx, yy, string(global.latency));
+scr_textShadow(xx, yy, string(global.latency));
 for (var i = 0; i &lt; instance_number(obj_remoteplayer); i++)
 {
     yy += 30;
     
     var remotePlayer = instance_find(obj_remoteplayer, i);
-    draw_text(xx, yy, string(remotePlayer.remotePlayerLatency));
+    scr_textShadow(xx, yy, string(remotePlayer.remotePlayerLatency));
 }
 </string>
           </argument>

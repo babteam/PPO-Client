@@ -17,7 +17,9 @@ global.inGame = 0;
 global.hairCustom = spr_hair_pigtails;
 global.outfitCustom = spr_outfit_plainDress;
 
-audio_play_sound(snd_lobby, 10, true);</code>
+audio_play_sound(snd_lobby, 10, true);
+
+randomize();  //randomizes the seed so that random variables are not the same each launch</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

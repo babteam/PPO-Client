@@ -89,7 +89,12 @@ colorMessage = "skin"; //called in step event to send a message on variable chan
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var col = draw_getpixel_ext(mouse_x, mouse_y);
+            <string>//-   var col = draw_getpixel_ext(mouse_x, mouse_y);
+
+if (surface_exists(application_surface)) {
+    var col = surface_getpixel(application_surface,mouse_x,mouse_y);
+}
+
 var alpha = (col &gt;&gt; 24) &amp; 255;
 var blue = (col &gt;&gt; 16) &amp; 255;
 var green = (col &gt;&gt; 8) &amp; 255;

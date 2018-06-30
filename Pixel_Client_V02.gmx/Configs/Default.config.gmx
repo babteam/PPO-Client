@@ -40,7 +40,7 @@
     <option_android_icon_xxhdpi>Configs\Default\android\icons\icon_xxhdpi.png</option_android_icon_xxhdpi>
     <option_android_icon_xxxhdpi>Configs\Default\android\icons\icon_xxxhdpi.png</option_android_icon_xxxhdpi>
     <option_android_install_location>auto</option_android_install_location>
-    <option_android_interpolate>-1</option_android_interpolate>
+    <option_android_interpolate>0</option_android_interpolate>
     <option_android_licensing_enable>0</option_android_licensing_enable>
     <option_android_licensing_key></option_android_licensing_key>
     <option_android_lint>-1</option_android_lint>
@@ -247,7 +247,7 @@
     <option_html5_google_tracking_id></option_html5_google_tracking_id>
     <option_html5_icon>Configs\Default\html5\fav.ico</option_html5_icon>
     <option_html5_index>-1</option_html5_index>
-    <option_html5_interpolate>-1</option_html5_interpolate>
+    <option_html5_interpolate>0</option_html5_interpolate>
     <option_html5_jsprepend></option_html5_jsprepend>
     <option_html5_loadingbar>-1</option_html5_loadingbar>
     <option_html5_localrunalert>True</option_html5_localrunalert>
@@ -263,7 +263,7 @@
     <option_icon>nil</option_icon>
     <option_in_app_purchase_sandbox_mode>0</option_in_app_purchase_sandbox_mode>
     <option_information></option_information>
-    <option_interpolate>True</option_interpolate>
+    <option_interpolate>False</option_interpolate>
     <option_ios_adcolony_enable_V4VC>false</option_ios_adcolony_enable_V4VC>
     <option_ios_advertising_enable>false</option_ios_advertising_enable>
     <option_ios_advertising_key></option_ios_advertising_key>
@@ -308,7 +308,7 @@
     <option_ios_icon_iphone_spotlight_120>Configs\Default\ios\icons\spotlight\iphone_120.png</option_ios_icon_iphone_spotlight_120>
     <option_ios_icon_iphone_spotlight_80>Configs\Default\ios\icons\spotlight\iphone_80.png</option_ios_icon_iphone_spotlight_80>
     <option_ios_icon_itunes_artwork_1024>Configs\Default\ios\icons\itunes\itunes_1024.png</option_ios_icon_itunes_artwork_1024>
-    <option_ios_interpolate>-1</option_ios_interpolate>
+    <option_ios_interpolate>0</option_ios_interpolate>
     <option_ios_ipad_retina_splash_png>Configs\Default\ios\iPadRetinasplash.png</option_ios_ipad_retina_splash_png>
     <option_ios_ipad_retina_splash_portrait_png>Configs\Default\ios\iPadRetinasplashPortrait.png</option_ios_ipad_retina_splash_portrait_png>
     <option_ios_ipad_splash_png>Configs\Default\ios\iPadsplash.png</option_ios_ipad_splash_png>
@@ -356,7 +356,7 @@
     <option_linux_fullscreen>0</option_linux_fullscreen>
     <option_linux_homepage>http://www.RP_client.com</option_linux_homepage>
     <option_linux_icon>Configs\Default\linux\icon64.png</option_linux_icon>
-    <option_linux_interpolate>-1</option_linux_interpolate>
+    <option_linux_interpolate>0</option_linux_interpolate>
     <option_linux_long_desc>RP_client</option_linux_long_desc>
     <option_linux_maintainer_email></option_linux_maintainer_email>
     <option_linux_scale>-1</option_linux_scale>
@@ -385,7 +385,7 @@
     <option_mac_enable_steam>0</option_mac_enable_steam>
     <option_mac_fullscreen>0</option_mac_fullscreen>
     <option_mac_icon_png>Configs\Default\mac\icon512.png</option_mac_icon_png>
-    <option_mac_interpolate>-1</option_mac_interpolate>
+    <option_mac_interpolate>0</option_mac_interpolate>
     <option_mac_major_version>1</option_mac_major_version>
     <option_mac_menu_dock>0</option_mac_menu_dock>
     <option_mac_minor_version>0</option_mac_minor_version>
@@ -517,7 +517,7 @@
     <option_win8_certificate_location>Windows8_TemporaryKey.pfx</option_win8_certificate_location>
     <option_win8_display_name>RP_client</option_win8_display_name>
     <option_win8_internet_capable>0</option_win8_internet_capable>
-    <option_win8_interpolate>-1</option_win8_interpolate>
+    <option_win8_interpolate>0</option_win8_interpolate>
     <option_win8_landscape_allowed>-1</option_win8_landscape_allowed>
     <option_win8_landscape_flipped_allowed>-1</option_win8_landscape_flipped_allowed>
     <option_win8_logo>Configs\Default\Windows8\logos\logo150.png</option_win8_logo>
@@ -549,7 +549,7 @@
     <option_winUAP_display_name>RP_client</option_winUAP_display_name>
     <option_winUAP_fullscreen>0</option_winUAP_fullscreen>
     <option_winUAP_internet_capable>0</option_winUAP_internet_capable>
-    <option_winUAP_interpolate>-1</option_winUAP_interpolate>
+    <option_winUAP_interpolate>0</option_winUAP_interpolate>
     <option_winUAP_landscape_allowed>-1</option_winUAP_landscape_allowed>
     <option_winUAP_landscape_flipped_allowed>-1</option_winUAP_landscape_flipped_allowed>
     <option_winUAP_large_logo>Configs\Default\WindowsUAP\logos\LargeLogo.scale-100.png</option_winUAP_large_logo>

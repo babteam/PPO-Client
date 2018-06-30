@@ -51,7 +51,7 @@
             <string>//draw_sprite_ext(spr_screenFade, image_index, obj_localplayer.x, obj_localplayer.y, 16, 9, image_angle, c_white, transp);
 
 draw_set_alpha(transp);
-draw_rectangle_color( 0,0, 960, 540, c_black, c_black, c_black, c_black, false);
+draw_rectangle_color( 0,0, window_get_width(), window_get_height(), c_black, c_black, c_black, c_black, false);
 draw_set_alpha(1.0);
 
 if(transp &lt;= 0)

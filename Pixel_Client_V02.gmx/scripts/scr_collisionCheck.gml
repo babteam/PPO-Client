@@ -27,6 +27,17 @@ if (place_meeting(x, y+vspd, obj_block))
 y += vspd;
 
 //slow us down
+//test code  --V
+
+if( hspd < 1 && hspd > -1 )
+    hspd = 0;
+else hspd = hspd*fric;  //slows us by the friction variable set in localPlayer > create
+
+if( vspd < 1 && vspd > -1 )
+    vspd = 0;
+else vspd = vspd*fric;
+
+/*
 if ( hspd>0 )
     {
         if ( !rightKey || leftKey )

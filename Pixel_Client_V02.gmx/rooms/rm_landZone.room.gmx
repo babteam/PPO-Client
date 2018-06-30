@@ -159,6 +159,7 @@
     <instance objName="obj_block" x="1870" y="1192" name="inst_6A5D7D89" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="1892" y="1197" name="inst_C62A3D80" locked="-1" code="" scaleX="6.375" scaleY="0.870967745780945" colour="4294967295" rotation="36"/>
     <instance objName="obj_roomBlock" x="-32" y="928" name="inst_F09FD713" locked="0" code="roomWarp = rm_crossPath;&#xA;xx = 2024;&#xA;yy = 1000;&#xA;" scaleX="1" scaleY="4.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_roomBlock" x="288" y="832" name="inst_6E55DAF9" locked="0" code="roomWarp = rm_landingHouse;&#xA;xx = 288;&#xA;yy = 336;&#xA;" scaleX="2.75" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>alpha = 1;
 message = "";
-x= 320;
-y=room_height/20*19;
+//- x= 320;
+//- y=room_height/20*19;
 </string>
           </argument>
         </arguments>
@@ -84,7 +84,8 @@ else
             <string>draw_set_font(fnt_main);
 draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
-draw_text_colour(x, y, message, c_silver, c_silver, c_silver, c_silver, alpha);
+//-  draw_text_colour(x, y, message, c_silver, c_silver, c_silver, c_silver, alpha);
+draw_text_colour( (window_get_width()*0.35) , (window_get_height()*0.95), message, c_silver, c_silver, c_silver, c_silver, alpha);
 </string>
           </argument>
         </arguments>
