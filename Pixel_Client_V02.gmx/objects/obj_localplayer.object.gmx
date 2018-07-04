@@ -205,6 +205,7 @@ buffer_write(global.buffer, buffer_f32, x);
 buffer_write(global.buffer, buffer_f32, y);
     buffer_write(global.buffer, buffer_u16, hairCustom);
     buffer_write(global.buffer, buffer_u16, outfitCustom);
+    buffer_write(global.buffer, buffer_u16, diaperCustom);
     buffer_write(global.buffer, buffer_u32, global.skinCol);
     buffer_write(global.buffer, buffer_u32, global.hairCol);
     buffer_write(global.buffer, buffer_u32, global.outfitCol);
