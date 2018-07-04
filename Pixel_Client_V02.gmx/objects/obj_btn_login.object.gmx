@@ -41,17 +41,17 @@ if (obj_textbox_password1.txt == "")
 }
 
 //try login
-var playerUsername = obj_textbox_username.txt;
+global.playerUsername = obj_textbox_username.txt;
 var playerPassword = obj_textbox_password1.txt;
-var playerPasswordHash = sha1_string_unicode(playerPassword);
+global.playerPasswordHash = sha1_string_unicode(playerPassword);
 
-global.name = playerUsername;
+global.name = global.playerUsername;
 
 buffer_seek(global.buffer, buffer_seek_start, 0);
 buffer_write(global.buffer, buffer_u8, 3); // using 3 value for player login
 buffer_write(global.buffer, buffer_u32, global.playerId);
-buffer_write(global.buffer, buffer_string, playerUsername);
-buffer_write(global.buffer, buffer_string, playerPasswordHash);
+buffer_write(global.buffer, buffer_string, global.playerUsername);
+buffer_write(global.buffer, buffer_string, global.playerPasswordHash);
 network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer)); //buffer_tell automatically gives a size for the buffer
 
 }

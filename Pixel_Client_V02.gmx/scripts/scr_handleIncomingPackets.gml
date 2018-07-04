@@ -284,7 +284,37 @@ switch(msgid)
 
         break;
 //============================================================================================================================================
+    case 16: //recieve saved user apperance from server
+
+        global.hairCustom = buffer_read(buffer, buffer_u16);
+        global.outfitCustom = buffer_read(buffer, buffer_u16);
+        global.diaperCustom = buffer_read(buffer, buffer_u16);
+        global.skinCol = buffer_read(buffer, buffer_u32);
+        global.hairCol = buffer_read(buffer, buffer_u32);
+        global.outfitCol = buffer_read(buffer, buffer_u32);
+        
+        if instance_exists(obj_btn_loadCharacter)
+            {
+                obj_btn_loadCharacter.clickable = 1;
+            }
+        
+        break;
 //============================================================================================================================================
+    case 17: //someone spawned a puddle
+        var xxroom = buffer_read(buffer, buffer_u8);
+        var xx = buffer_read(buffer, buffer_f32);
+        var yy = buffer_read(buffer, buffer_f32);
+        
+/*        if(room == xxroom)
+            {
+                instance_create(xx, yy, obj_leakPuddle);
+            }
+        else 
+            {    */
+                room_instance_add(xxroom, xx, yy, obj_leakPuddle);
+        //    }
+            
+        break;
 //============================================================================================================================================
 //============================================================================================================================================
 }

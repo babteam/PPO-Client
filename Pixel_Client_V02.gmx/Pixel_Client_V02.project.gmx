@@ -12,6 +12,8 @@
   <sprites name="sprites">
     <sprites name="buttons">
       <sprite>sprites\spr_textbox</sprite>
+      <sprite>sprites\spr_btn_LoadCharacter</sprite>
+      <sprite>sprites\spr_btn_NewCharacter</sprite>
       <sprite>sprites\spr_checkbox</sprite>
       <sprite>sprites\spr_btn_back</sprite>
       <sprite>sprites\spr_btn_exit</sprite>
@@ -206,6 +208,8 @@
         <object>objects\obj_btn_custom</object>
         <object>objects\obj_btn_download</object>
         <object>objects\obj_fullscreenCheck</object>
+        <object>objects\obj_btn_newCharacter</object>
+        <object>objects\obj_btn_loadCharacter</object>
       </objects>
       <objects name="mainGUI">
         <object>objects\obj_playerList</object>
@@ -221,11 +225,12 @@
       <object>objects\obj_npc</object>
       <object>objects\obj_overlayImage</object>
     </objects>
-    <objects name="Weapons">
+    <objects name="player_spawns">
       <objects name="projectiles">
         <object>objects\obj_projectile</object>
         <object>objects\obj_remoteProjectile</object>
       </objects>
+      <object>objects\obj_leakPuddle</object>
     </objects>
     <object>objects\obj_ball</object>
     <object>objects\obj_roomBlock</object>
@@ -247,6 +252,7 @@
       <room>rooms\rm_register</room>
       <room>rooms\rm_login</room>
       <room>rooms\rm_mainMenu</room>
+      <room>rooms\rm_characterLoad</room>
       <room>rooms\rm_playerSelect</room>
       <room>rooms\rm_updateRoom</room>
     </rooms>

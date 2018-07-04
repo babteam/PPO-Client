@@ -57,12 +57,26 @@ if(global.inGame == 0)
         buffer_seek(global.buffer, buffer_seek_start, 0);
         buffer_write(global.buffer, buffer_u8, 6);
         buffer_write(global.buffer, buffer_u32, global.playerId);
-        buffer_write(global.buffer, buffer_u8, global.playerType); //sending player color
+        buffer_write(global.buffer, buffer_u8, global.playerType); //I think playtype is obsolete, try removing it later
         buffer_write(global.buffer, buffer_u8, 1);
         network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer));
         
         global.inGame = 1;
     }
+    
+    
+    
+    // below updates ther servers ini file of your appearance 
+    buffer_seek(global.buffer, buffer_seek_start, 0);
+    buffer_write(global.buffer, buffer_u8, 15);
+    buffer_write(global.buffer, buffer_string, global.playerUsername);
+    buffer_write(global.buffer, buffer_u16, global.hairCustom);
+    buffer_write(global.buffer, buffer_u16, global.outfitCustom);
+    buffer_write(global.buffer, buffer_u16, global.diaperCustom);
+    buffer_write(global.buffer, buffer_u32, global.skinCol);
+    buffer_write(global.buffer, buffer_u32, global.hairCol);
+    buffer_write(global.buffer, buffer_u32, global.outfitCol);
+    network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer));
 </string>
           </argument>
         </arguments>

@@ -56,7 +56,7 @@ scriptMoveCount = 0; //a counter for the current script
 //==========================================================
 hairCustom = global.hairCustom;
 outfitCustom = global.outfitCustom;
-diaperCustom = spr_diaper_regular;
+diaperCustom = global.diaperCustom;
 skinCol = global.skinCol;
 hairCol = global.hairCol;
 outfitCol = global.outfitCol;
@@ -134,6 +134,7 @@ instance_create(x, y, obj_localInteract);
 else
     {
         stunned = stunned -1;
+        state = "standing";
     }
     
 scr_scriptedMovement();
@@ -203,6 +204,7 @@ buffer_write(global.buffer, buffer_u8, 7);
 buffer_write(global.buffer, buffer_u32, global.playerId);
 buffer_write(global.buffer, buffer_f32, x);
 buffer_write(global.buffer, buffer_f32, y);
+    //below might be too much each frame, try sending appearance updates less often
     buffer_write(global.buffer, buffer_u16, hairCustom);
     buffer_write(global.buffer, buffer_u16, outfitCustom);
     buffer_write(global.buffer, buffer_u16, diaperCustom);
