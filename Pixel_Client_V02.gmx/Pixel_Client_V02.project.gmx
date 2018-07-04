@@ -71,6 +71,9 @@
       <sprites name="playerGUI">
         <sprite>sprites\spr_peeMeter</sprite>
       </sprites>
+      <sprites name="spawnable">
+        <sprite>sprites\spr_player_puddle</sprite>
+      </sprites>
     </sprites>
     <sprites name="playerBab">
       <sprite>sprites\spr_babTorso</sprite>
@@ -157,7 +160,7 @@
       <script>scripts\script12.gml</script>
       <script>scripts\scr_characterSwap.gml</script>
     </scripts>
-    <script>scripts\scr_catapult.gml</script>
+    <script>scripts\scr_scriptedMovement.gml</script>
     <script>scripts\scr_avatar.gml</script>
     <script>scripts\scr_textShadow.gml</script>
     <script>scripts\__notes__.gml</script>
@@ -208,12 +211,16 @@
         <object>objects\obj_playerList</object>
         <object>objects\obj_peeMeter</object>
       </objects>
+      <object>objects\obj_musicPauser</object>
     </objects>
     <object>objects\obj_remoteplayer</object>
     <object>objects\obj_localInteract</object>
     <object>objects\obj_localplayer</object>
     <object>objects\obj_chat</object>
-    <object>objects\obj_npc</object>
+    <objects name="old_objects">
+      <object>objects\obj_npc</object>
+      <object>objects\obj_overlayImage</object>
+    </objects>
     <objects name="Weapons">
       <objects name="projectiles">
         <object>objects\obj_projectile</object>
@@ -221,7 +228,6 @@
       </objects>
     </objects>
     <object>objects\obj_ball</object>
-    <object>objects\obj_overlayImage</object>
     <object>objects\obj_roomBlock</object>
     <object>objects\obj_npcBlock</object>
     <object>objects\obj_screenFade</object>
@@ -230,7 +236,6 @@
       <object>objects\obj_catapult</object>
       <object>objects\obj_catapultFire</object>
     </objects>
-    <object>objects\obj_musicPauser</object>
     <objects name="blank NPCs">
       <object>objects\obj_npc_duckMerchant</object>
     </objects>

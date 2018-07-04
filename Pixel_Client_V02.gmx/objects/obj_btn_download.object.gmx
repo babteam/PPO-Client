@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>url_open( 'https://hiradontell.itch.io/pixel-client' );
+            <string>url_open( 'https://hiradontell.itch.io/ppo-client' );
 </string>
           </argument>
         </arguments>

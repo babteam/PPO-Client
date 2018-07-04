@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>message = "Editing Skin Color";
+            <string>message = "Editing: Skin Color";
 
 coloring = "skin";
 colorMessage = "skin"; //called in step event to send a message on variable change
@@ -56,13 +56,13 @@ colorMessage = "skin"; //called in step event to send a message on variable chan
         switch (coloring)
             {
                 case "skin":
-                    message = "Editing Skin Color";
+                    message = "Editing: Skin Color";
                     break;
                 case "hair":
-                    message = "Editing Hair Color";
+                    message = "Editing: Hair Color";
                     break;
                 case "outfit":
-                    message = "Editing Outfit Color";
+                    message = "Editing: Outfit Color";
                     break;
             }
         colorMessage = coloring;
@@ -141,7 +141,7 @@ switch (coloring)
 draw_set_font(fnt_main);
 draw_set_valign(fa_middle);
 draw_set_halign(fa_left);
-draw_text_colour(x, y -30, message, c_silver, c_silver, c_silver, c_silver, image_alpha);
+draw_text_colour(x+10, y -110, message, c_silver, c_silver, c_silver, c_silver, image_alpha);
 </string>
           </argument>
         </arguments>

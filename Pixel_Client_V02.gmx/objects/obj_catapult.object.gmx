@@ -83,6 +83,7 @@ switch(run)
         case 1: 
                 draw_sprite_ext(spr_catapult_arm, 1, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
                 run = 2;
+                obj_localplayer.stunned = 90;  //stun the player for 3 seconds
                 obj_localplayer.x = 470; 
                 obj_localplayer.y = 420;
                 break;
@@ -99,7 +100,8 @@ switch(run)
                 obj_localplayer.y = 260;
                 break;
         case 4: 
-                obj_localplayer.catapult = 1;
+                obj_localplayer.scriptMove = 1; //run catapult script
+                obj_localplayer.scriptMoveCount = 1; //set script count
                 run = 0;
                 break;
     }

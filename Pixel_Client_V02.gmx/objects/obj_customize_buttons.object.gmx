@@ -32,6 +32,46 @@ image_speed = 0;
 
 hairMax = spr_hair_STOP - spr_hair_START - 2;
 outfitMax = spr_outfit_STOP - spr_outfit_START - 2;
+
+label = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(label == 1)
+    {
+        switch(obj_colorPicker.coloring)
+            {
+                case "skin":
+                    image_index = 7;
+                    break;
+                case "hair":
+                    image_index = 1;
+                    break;
+                case "outfit":
+                    image_index = 2;
+                    break;
+            }
+    
+    }
 </string>
           </argument>
         </arguments>
@@ -93,6 +133,39 @@ switch (button)
                 obj_playerSelect.outfit--;
             else obj_playerSelect.outfit = outfitMax;
         break;
+        
+//=====================================================
+        case 7: //extra button swap Left
+            switch(obj_colorPicker.coloring)
+                {
+                    case "hair":
+                        obj_colorPicker.coloring = "skin"
+                        break;
+                    case "outfit":
+                        obj_colorPicker.coloring = "hair"
+                        break;
+                    case "skin":
+                        obj_colorPicker.coloring = "outfit"
+                        break;
+                
+                }
+            break;
+        
+        case 8: //extra button swap Right
+            switch(obj_colorPicker.coloring)
+                {
+                    case "skin":
+                        obj_colorPicker.coloring = "hair"
+                        break;
+                    case "hair":
+                        obj_colorPicker.coloring = "outfit"
+                        break;
+                    case "outfit":
+                        obj_colorPicker.coloring = "skin"
+                        break;
+                
+                }
+            break;
     }
     
 global.hairCustom = spr_hair_START+1 + obj_playerSelect.hair;

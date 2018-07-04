@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_skinColorButton</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -78,7 +78,7 @@ else instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_showNotification("thats a wall");
+            <string>//scr_showNotification("thats a wall");
 </string>
           </argument>
         </arguments>
