@@ -230,6 +230,7 @@
         <object>objects\obj_projectile</object>
         <object>objects\obj_remoteProjectile</object>
       </objects>
+      <object>objects\obj_leakPuddleSpawner</object>
       <object>objects\obj_leakPuddle</object>
     </objects>
     <object>objects\obj_ball</object>

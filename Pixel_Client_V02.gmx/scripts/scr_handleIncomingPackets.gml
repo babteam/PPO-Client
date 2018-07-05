@@ -305,14 +305,16 @@ switch(msgid)
         var xx = buffer_read(buffer, buffer_f32);
         var yy = buffer_read(buffer, buffer_f32);
         
-/*        if(room == xxroom)
+        if(room == xxroom)
             {
-                instance_create(xx, yy, obj_leakPuddle);
+                iii = instance_create(xx, yy, obj_leakPuddle);
+                    iii.localObj = 0;
             }
         else 
-            {    */
-                room_instance_add(xxroom, xx, yy, obj_leakPuddle);
-        //    }
+            {    
+                ii = instance_create(xx, yy, obj_leakPuddleSpawner);
+                    ii.xroom = xxroom;
+            }
             
         break;
 //============================================================================================================================================
