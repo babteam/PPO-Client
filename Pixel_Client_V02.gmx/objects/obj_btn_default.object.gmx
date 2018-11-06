@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.ipChoose = "156.57.219.94";
+            <string>global.ipChoose = "156.57.215.142";
 room_goto_next();
 </string>
           </argument>

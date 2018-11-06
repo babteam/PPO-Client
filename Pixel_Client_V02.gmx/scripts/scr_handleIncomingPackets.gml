@@ -318,5 +318,16 @@ switch(msgid)
             
         break;
 //============================================================================================================================================
+    case 18:  //recieve derpy dragon updates
+        var npcDerpyXX = buffer_read(buffer, buffer_f32);
+        var npcDerpyYY = buffer_read(buffer, buffer_f32);
+        
+        if instance_exists(obj_derpyDragonNPC)
+            {
+                obj_derpyDragonNPC.xxx = npcDerpyXX;
+                obj_derpyDragonNPC.yyy = npcDerpyYY;
+            }
+        
+        break;
 //============================================================================================================================================
 }

@@ -18,9 +18,9 @@ global.playerUsername = undefined;
 global.playerPasswordHash = undefined;
 
 
-global.hairCustom = spr_hair_pigtails;
-global.outfitCustom = spr_outfit_plainDress;
-global.diaperCustom = spr_diaper_regular;
+global.hairCustom = 1;
+global.outfitCustom = 1;
+global.diaperCustom = 1;
 
     global.skinCol = make_colour_rgb(254, 219, 200);
     global.hairCol = make_colour_rgb(129, 104, 065);
@@ -72,6 +72,7 @@ randomize();  //randomizes the seed so that random variables are not the same ea
     <instance objName="obj_btn_default" x="480" y="192" name="inst_0F28BAD8" locked="0" code="" scaleX="1.42448973655701" scaleY="1.49230766296387" colour="4294967295" rotation="0"/>
     <instance objName="obj_btn_custom" x="480" y="336" name="inst_E56B5972" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_musicPauser" x="32" y="16" name="inst_113C41F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_DUAL_START" x="608" y="64" name="inst_6599527B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

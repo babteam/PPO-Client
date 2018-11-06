@@ -52,6 +52,8 @@ global.latency = 0;
 global.typing = false;
 global.inGame = 0;
 
+global.controlType = 0; //0 = keyboard, 1 = xbox gamepad
+
 global.playerType = 0;
 
 maxWidth = 600;
@@ -59,7 +61,6 @@ blink = false;
 text = "";
 
 alarm[1] = room_speed * 5;
-
 
 //var type = network_socket_tcp;
 //var ip = "192.168.0.10";
@@ -156,6 +157,9 @@ buffer_write(global.buffer, buffer_u8, 1);
 buffer_write(global.buffer, buffer_u32, current_time);
 network_send_packet(socket, global.buffer, buffer_tell(global.buffer));  // send packet to server
                                                                         //server is stored in socket
+                                                                        
+// change on-screen controls based on last pressed device
+scr_gamepadCheck();
 </string>
           </argument>
         </arguments>
@@ -401,6 +405,8 @@ if (global.inGame == 1)
         keyboard_string = text;
     }
 }
+
+
 </string>
           </argument>
         </arguments>

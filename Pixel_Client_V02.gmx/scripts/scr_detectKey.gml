@@ -8,4 +8,6 @@ if (!global.typing)
     jumpKey     = keyboard_check_pressed(vk_space)  || gamepad_button_check_pressed(0, gp_face1);
     sprintKey   = keyboard_check(vk_shift)          || gamepad_button_check(0, gp_face3);
     duckKey     = keyboard_check(ord("V"));  //why is this here
+    
+    actionKey   = keyboard_check(ord("E")) || gamepad_button_check(0, gp_face1);  // declared in obClient
 }

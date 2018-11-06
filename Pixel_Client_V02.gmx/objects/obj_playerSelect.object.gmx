@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>
 
-hair = global.hairCustom - spr_hair_pigtails;
-outfit = global.outfitCustom - spr_outfit_plainDress;
+hair = global.hairCustom;
+outfit = global.outfitCustom;
 </string>
           </argument>
         </arguments>
@@ -80,8 +80,8 @@ draw_sprite_ext(spr_paperdoll_skin1, 0, x, y+40, image_xscale, image_yscale, ima
 
 draw_sprite_ext(spr_diaper_regular, 0, x, y+40, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 
-draw_sprite_ext(global.hairCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.hairCol, image_alpha);
-draw_sprite_ext(global.outfitCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.outfitCol, image_alpha);
+draw_sprite_ext(spr_hair_START+global.hairCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.hairCol, image_alpha);
+draw_sprite_ext(spr_outfit_START+global.outfitCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.outfitCol, image_alpha);
 
 </string>
           </argument>

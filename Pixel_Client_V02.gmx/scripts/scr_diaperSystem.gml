@@ -1,12 +1,12 @@
-if( diaperCustom > spr_diaper_START )
-    {
+//if( diaperCustom > spr_diaper_START )
+   // {
         if ( pee < maxPee )
             {
                 pee = pee + hydration;
             }
         else
             {
-                if( (diaperCustom - spr_diaper_START)%3 > 0 && diaperCustom != spr_diaper_START )
+                if( (diaperCustom)%3 > 0 && diaperCustom != spr_diaper_START )
                     {
                         diaperCustom++;  // % means modulo, divides by the number and returns the remainder instead
                         //stunned = 5;
@@ -18,7 +18,7 @@ if( diaperCustom > spr_diaper_START )
                     }
                 pee = 0;
             }
-    }
+   // }
     
     
 if (hydration > 1)

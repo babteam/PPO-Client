@@ -22,27 +22,27 @@ switch(playerType)
                 {
                     case "right":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames + 6, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
-                                draw_sprite_ext(hairCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
-                                draw_sprite_ext(diaperCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
+                                draw_sprite_ext(spr_hair_START + hairCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(spr_diaper_START + diaperCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+                                draw_sprite_ext(spr_outfit_START + outfitCustom, frames + 6, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                     case "left":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames + 9, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
-                                draw_sprite_ext(hairCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
-                                draw_sprite_ext(diaperCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
+                                draw_sprite_ext(spr_hair_START + hairCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(spr_diaper_START + diaperCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+                                draw_sprite_ext(spr_outfit_START + outfitCustom, frames + 9, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                     case "down":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
-                                draw_sprite_ext(hairCustom, frames, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
-                                draw_sprite_ext(diaperCustom, frames, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
+                                draw_sprite_ext(spr_hair_START + hairCustom, frames, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(spr_diaper_START + diaperCustom, frames, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+                                draw_sprite_ext(spr_outfit_START + outfitCustom, frames, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                     case "up":
                                 draw_sprite_ext(spr_paperdoll_skin1, frames + 3, x, y, image_xscale, image_yscale, image_angle, skinCol, image_alpha);
-                                draw_sprite_ext(hairCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
-                                draw_sprite_ext(diaperCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-                                draw_sprite_ext(outfitCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
+                                draw_sprite_ext(spr_hair_START + hairCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, hairCol, image_alpha);
+                                draw_sprite_ext(spr_diaper_START + diaperCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+                                draw_sprite_ext(spr_outfit_START + outfitCustom, frames + 3, x, y, image_xscale, image_yscale, image_angle, outfitCol, image_alpha);
                                 break;
                 }
                 break;

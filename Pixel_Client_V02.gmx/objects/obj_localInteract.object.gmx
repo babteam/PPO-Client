@@ -8,6 +8,30 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>action = "----";
+run = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,43 +49,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///position based on player facing direction
-
-var xx = 0;
-var yy = 0;
-
-if(instance_exists(obj_localplayer))
+            <string>///check if still interacting
+if(action != "----")
     {
-        switch (obj_localplayer.dir)
+        if(!place_meeting(x, y, obj_interactObject))
             {
-                case "right":
-                    xx = 35;
-                    break;
-                    
-                case "left":
-                    xx = -35;
-                    break;
-                    
-                case "down":
-                    yy = 25;
-                    break;
-                    
-                case "up":
-                    yy = -25;
-                    break;
+                action = "----";
             }
-            
-        x = obj_localplayer.x + xx;
-        y = obj_localplayer.y + yy;
-        
     }
-else instance_destroy();
+
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="obj_block">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -78,7 +78,105 @@ else instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//scr_showNotification("thats a wall");
+            <string>///Press action button
+if(obj_localplayer.actionKey == true)
+    {
+        if(run == 1 &amp;&amp; action != "----")
+            {
+                switch(action)
+                    {
+                        case "Change Diaper":
+                             if( obj_localplayer.diaperCustom != 1 )
+                                obj_localplayer.diaperCustom = 1;
+                            break;
+                            
+                        case "Search under sink":
+                            scr_showNotification("Nothing found");
+                            break;
+                            
+                        case "Use device?":
+                            scr_showNotification("You don't know how.");
+                            break;
+                            
+                        case "Sleep":
+                            scr_showNotification("Your not tired");
+                            break;
+                            
+                        default:
+                            break;
+                    
+                    }
+            }
+        else 
+            {
+                run = 0;
+            }
+    }
+else
+    {
+        run = 1;
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_interactObject">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///notify what action does
+
+action = other.action;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///notify what action does
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_colour(c_white);
+draw_set_font(fnt_main);
+
+var shrinkTextxx = string_width(action);
+if(shrinkTextxx &gt; 150)
+        shrinkTextxx = 150/shrinkTextxx;
+    else
+        shrinkTextxx = 1;
+
+draw_text_transformed(window_get_width()-160, 26, action, shrinkTextxx, 1, image_angle);
+//draw_text(window_get_width()-160, 12, action);
 </string>
           </argument>
         </arguments>

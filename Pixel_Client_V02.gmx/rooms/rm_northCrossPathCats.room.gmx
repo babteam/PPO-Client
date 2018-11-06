@@ -756,6 +756,8 @@
     <instance objName="obj_blircle" x="1484" y="586" name="inst_B50479BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_roomBlock" x="334" y="1252" name="inst_DC720D74" locked="0" code="roomWarp = rm_crossPath;&#xA;xx = noone;&#xA;    if (obj_localplayer.x &gt; 1216)&#xA;        {&#xA;            xx = 1216;&#xA;        }&#xA;    if (obj_localplayer.x &lt; 370)&#xA;        {&#xA;            xx = 370;&#xA;        }&#xA;yy = 20;&#xA;" scaleX="31.8709678649902" scaleY="0.875" colour="4294967295" rotation="0"/>
     <instance objName="obj_roomBlock" x="598" y="-32" name="inst_823FA979" locked="-1" code="roomWarp = rm_northNorthPath;&#xA;xx = noone;&#xA;yy = 1220;&#xA;" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_classicSasha" x="1772" y="668" name="inst_4CF0A463" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_constructionSign" x="106" y="984" name="inst_6CC1A03D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

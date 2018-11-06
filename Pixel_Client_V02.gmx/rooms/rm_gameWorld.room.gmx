@@ -101,6 +101,8 @@
     <instance objName="obj_block" x="-24" y="224" name="inst_82F27211" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="-24" y="192" name="inst_EBE779D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_roomBlock" x="152" y="392" name="inst_18B2CDF6" locked="-1" code="roomWarp = rm_hallway;&#xA;xx=224;&#xA;yy=112;" scaleX="2.75" scaleY="0.75" colour="4294967295" rotation="0"/>
+    <instance objName="obj_interactObject" x="278" y="138" name="inst_4DE15BA6" locked="0" code="action = &quot;Change Diaper&quot;;" scaleX="2.5" scaleY="1.5625" colour="4294967295" rotation="0"/>
+    <instance objName="obj_interactObject" x="8" y="175" name="inst_165B5F45" locked="0" code="action = &quot;Sleep&quot;;&#xA;" scaleX="4.125" scaleY="0.939999997615814" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

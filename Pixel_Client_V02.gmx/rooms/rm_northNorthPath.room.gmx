@@ -991,6 +991,8 @@
     <instance objName="obj_block" x="-32" y="228" name="inst_E888C44F" locked="0" code="" scaleX="1" scaleY="14.625" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="1146" y="-32" name="inst_4F0DEB8B" locked="0" code="" scaleX="10.9375" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_roomBlock" x="594" y="1248" name="inst_D0CCCCB6" locked="-1" code="roomWarp = rm_northCrossPathCats;&#xA;xx = noone;&#xA;    if( obj_localplayer.x &lt; 650)&#xA;        {&#xA;            xx = 650;&#xA;        }&#xA;    if( obj_localplayer.x &gt; 860)&#xA;        {&#xA;            xx = 860;&#xA;        }&#xA;yy = 30;&#xA;" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_constructionSign" x="98" y="568" name="inst_69E59D8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_constructionSign" x="1320" y="160" name="inst_BEA67012" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

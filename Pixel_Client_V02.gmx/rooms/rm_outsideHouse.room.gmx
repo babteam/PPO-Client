@@ -133,6 +133,7 @@
     <instance objName="obj_block" x="535" y="509" name="inst_436035D2" locked="-1" code="" scaleX="0.6875" scaleY="0.1875" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="559" y="514" name="inst_EE6DE570" locked="-1" code="" scaleX="0.193548381328583" scaleY="0.28125" colour="4294967295" rotation="0"/>
     <instance objName="obj_catapultFire" x="416" y="544" name="inst_C619F571" locked="0" code="" scaleX="1.75" scaleY="1" colour="4278255360" rotation="0"/>
+    <instance objName="obj_derpyDragonNPC" x="288" y="424" name="inst_3DAA460C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

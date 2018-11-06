@@ -49,6 +49,8 @@ terminalVelocity = 50;
 animSpeed = 0;
 frames=0;
 
+actionKey = false; //just to make sure key is declared before interract asks for it
+
 stunned = 0; //how many frames you can't move for
 scriptMove = 0; //what scripted movement the player is currently on
 scriptMoveCount = 0; //a counter for the current script
@@ -73,6 +75,29 @@ projectileCount = 0;
 
 instance_create(x, y, obj_localInteract);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy(obj_localInteract);
 </string>
           </argument>
         </arguments>
@@ -239,6 +264,34 @@ if(!global.typing)
         }
     }
 }
+
+// position the interaction ball (obj_localInteract) based on position
+var xx = 0;
+var yy = 0;
+
+if(instance_exists(obj_localInteract))
+    {
+        switch (dir)
+            {
+                case "right":
+                    xx = 35;
+                    break;
+                    
+                case "left":
+                    xx = -35;
+                    break;
+                    
+                case "down":
+                    yy = 25;
+                    break;
+                    
+                case "up":
+                    yy = -25;
+                    break;
+            }
+        obj_localInteract.x = x + xx;
+        obj_localInteract.y = y + yy;
+    }
 </string>
           </argument>
         </arguments>
@@ -289,9 +342,21 @@ y = ystart;
 
 //-if(diaperCustom &gt; spr_diaper_START)
 //-    {
-var tempIMG = floor((pee / maxPee) * 75);
-draw_sprite_ext(spr_peeMeter, tempIMG, window_get_width()*0.95, 0 + window_get_height()*0.1, image_xscale, image_yscale, image_angle, image_blend, 0.5);
+var tempIMG = floor((pee / maxPee) * 150);
+draw_sprite_ext(spr_peeGUI, tempIMG, 10, 10, image_xscale, image_yscale, 0, image_blend, 0.5);
+draw_sprite_ext(spr_actionButton, global.controlType, window_get_width() - 200, 10, image_xscale, image_yscale, 0, image_blend, 0.5);
 //-    }
+//- draw_set_colour(c_yellow);
+//- draw_set_alpha(0.5);
+//- draw_rectangle( window_get_width()-187, 103, window_get_width()-200+tempIMG, 114, false);
+
+if (global.devControls &gt; 9)
+    {
+    
+    draw_text(10, 10, "Pee: " + string(pee));
+    draw_text(10, 40, "MaxPee: " + string(maxPee));
+    
+    }
 </string>
           </argument>
         </arguments>

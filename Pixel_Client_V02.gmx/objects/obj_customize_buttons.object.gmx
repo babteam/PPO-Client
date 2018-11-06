@@ -30,8 +30,8 @@
 button = 0;
 image_speed = 0;
 
-hairMax = spr_hair_STOP - spr_hair_START - 2;
-outfitMax = spr_outfit_STOP - spr_outfit_START - 2;
+hairMax = spr_hair_STOP - spr_hair_START - 1;
+outfitMax = spr_outfit_STOP - spr_outfit_START - 1;
 
 label = 0;
 </string>
@@ -113,11 +113,11 @@ switch (button)
         case 3: //hair up
             if ( obj_playerSelect.hair &lt; hairMax )
                 obj_playerSelect.hair++;
-            else obj_playerSelect.hair = 0;
+            else obj_playerSelect.hair = 1;
         break;
         
         case 4: //hair down
-            if ( obj_playerSelect.hair &gt; 0 )
+            if ( obj_playerSelect.hair &gt; 1 )
                 obj_playerSelect.hair--;
             else obj_playerSelect.hair = hairMax;
         break;
@@ -125,11 +125,11 @@ switch (button)
         case 5: //outfit up
             if ( obj_playerSelect.outfit &lt; outfitMax )
                 obj_playerSelect.outfit++;
-            else obj_playerSelect.outfit = 0;
+            else obj_playerSelect.outfit = 1;
         break;
         
         case 6: //outfit down
-            if ( obj_playerSelect.outfit &gt; 0 )
+            if ( obj_playerSelect.outfit &gt; 1 )
                 obj_playerSelect.outfit--;
             else obj_playerSelect.outfit = outfitMax;
         break;
@@ -168,8 +168,8 @@ switch (button)
             break;
     }
     
-global.hairCustom = spr_hair_START+1 + obj_playerSelect.hair;
-global.outfitCustom = spr_outfit_START+1 + obj_playerSelect.outfit;
+global.hairCustom = obj_playerSelect.hair;
+global.outfitCustom = obj_playerSelect.outfit;
 </string>
           </argument>
         </arguments>
