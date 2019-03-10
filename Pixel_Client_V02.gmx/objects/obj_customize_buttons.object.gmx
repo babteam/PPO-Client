@@ -31,7 +31,7 @@ button = 0;
 image_speed = 0;
 
 hairMax = spr_hair_STOP - spr_hair_START - 1;
-outfitMax = spr_outfit_STOP - spr_outfit_START - 1;
+outfitTopMax = spr_outfitTop_STOP - spr_outfitTop_START - 1;
 
 label = 0;
 </string>
@@ -106,7 +106,7 @@ switch (button)
             obj_colorPicker.coloring = "hair";
             break;
         case 2:
-            obj_colorPicker.coloring = "outfit";
+            obj_colorPicker.coloring = "outfitTop";
             break;
 //=====================================================
     
@@ -122,16 +122,16 @@ switch (button)
             else obj_playerSelect.hair = hairMax;
         break;
         
-        case 5: //outfit up
-            if ( obj_playerSelect.outfit &lt; outfitMax )
-                obj_playerSelect.outfit++;
-            else obj_playerSelect.outfit = 1;
+        case 5: //outfitTop up
+            if ( obj_playerSelect.outfitTop &lt; outfitTopMax )
+                obj_playerSelect.outfitTop++;
+            else obj_playerSelect.outfitTop = 1;
         break;
         
-        case 6: //outfit down
-            if ( obj_playerSelect.outfit &gt; 1 )
-                obj_playerSelect.outfit--;
-            else obj_playerSelect.outfit = outfitMax;
+        case 6: //outfitTop down
+            if ( obj_playerSelect.outfitTop &gt; 1 )
+                obj_playerSelect.outfitTop--;
+            else obj_playerSelect.outfitTop = outfitTopMax;
         break;
         
 //=====================================================
@@ -141,11 +141,11 @@ switch (button)
                     case "hair":
                         obj_colorPicker.coloring = "skin"
                         break;
-                    case "outfit":
+                    case "outfitTop":
                         obj_colorPicker.coloring = "hair"
                         break;
                     case "skin":
-                        obj_colorPicker.coloring = "outfit"
+                        obj_colorPicker.coloring = "outfitTop"
                         break;
                 
                 }
@@ -158,9 +158,9 @@ switch (button)
                         obj_colorPicker.coloring = "hair"
                         break;
                     case "hair":
-                        obj_colorPicker.coloring = "outfit"
+                        obj_colorPicker.coloring = "outfitTop"
                         break;
-                    case "outfit":
+                    case "outfitTop":
                         obj_colorPicker.coloring = "skin"
                         break;
                 
@@ -169,7 +169,8 @@ switch (button)
     }
     
 global.hairCustom = obj_playerSelect.hair;
-global.outfitCustom = obj_playerSelect.outfit;
+global.outfitTopCustom = obj_playerSelect.outfitTop;
+//global.outfitBottomCustom = obj_playerSelect.outfitBottom;
 </string>
           </argument>
         </arguments>

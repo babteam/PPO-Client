@@ -37,6 +37,7 @@ vspd = 0;
 //- xspd=0;
 // -yspd=0;
 state = "standing";
+    state2 = 0;
 dir = "right";
 jumping = false;
 falling = false;
@@ -50,6 +51,7 @@ animSpeed = 0;
 frames=0;
 
 actionKey = false; //just to make sure key is declared before interract asks for it
+inventory_open = -1;
 
 stunned = 0; //how many frames you can't move for
 scriptMove = 0; //what scripted movement the player is currently on
@@ -57,16 +59,28 @@ scriptMoveCount = 0; //a counter for the current script
 
 //==========================================================
 hairCustom = global.hairCustom;
-outfitCustom = global.outfitCustom;
+outfitTopCustom = global.outfitTopCustom;
+outfitBottomCustom = global.outfitBottomCustom;
 diaperCustom = global.diaperCustom;
 skinCol = global.skinCol;
 hairCol = global.hairCol;
-outfitCol = global.outfitCol;
+outfitTopCol = global.outfitTopCol;
+outfitBottomCol = global.outfitBottomCol;
+
+//==========================================================
+//=====       body animation variables      =====
+rightArmAngle = 0;
+leftArmAngle = 0;
+
+rightLegSquish = 1;
+leftLegSquish = 1;
 
 //==========================================================
 pee = 0;
 maxPee = random_range(9000, 11000); //about 5 to 6 minutes
 hydration = 1;  //multiplier for how fast the previous reaches max
+
+peeHold = 0;
 
 
 projectileCount = 0;
@@ -231,39 +245,19 @@ buffer_write(global.buffer, buffer_f32, x);
 buffer_write(global.buffer, buffer_f32, y);
     //below might be too much each frame, try sending appearance updates less often
     buffer_write(global.buffer, buffer_u16, hairCustom);
-    buffer_write(global.buffer, buffer_u16, outfitCustom);
+    buffer_write(global.buffer, buffer_u16, outfitTopCustom);
+        buffer_write(global.buffer, buffer_u16, outfitBottomCustom);
     buffer_write(global.buffer, buffer_u16, diaperCustom);
     buffer_write(global.buffer, buffer_u32, global.skinCol);
     buffer_write(global.buffer, buffer_u32, global.hairCol);
-    buffer_write(global.buffer, buffer_u32, global.outfitCol);
+    buffer_write(global.buffer, buffer_u32, global.outfitTopCol);
+        buffer_write(global.buffer, buffer_u32, global.outfitBottomCol);
+    buffer_write(global.buffer, buffer_u8, peeHold);
 buffer_write(global.buffer, buffer_u8, frames);
 buffer_write(global.buffer, buffer_u8, d);
 buffer_write(global.buffer, buffer_u32, room);
 
 network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer));
-
-//if (keyboard_check(ord("P")))
-//above is from Tut, but I wanted Tab instead
-if(!global.typing)
-{
-    if (keyboard_check(vk_tab))
-    {
-        if (!instance_exists(obj_playerList))
-        {
-            instance_create(x, y, obj_playerList);
-        }
-    }
-    else
-    {
-        if (instance_exists(obj_playerList))
-        {
-            with(obj_playerList)
-            {
-                instance_destroy();
-            }
-        }
-    }
-}
 
 // position the interaction ball (obj_localInteract) based on position
 var xx = 0;
@@ -292,6 +286,43 @@ if(instance_exists(obj_localInteract))
         obj_localInteract.x = x + xx;
         obj_localInteract.y = y + yy;
     }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///check inventory key
+
+
+if (keyboard_check(vk_tab))
+    {
+        if(inventory_open == -1)
+            inventory_open = 2;
+        if(inventory_open == 1)
+            inventory_open = -2;
+    }
+    else
+        {
+            if(inventory_open == -2)
+                inventory_open = -1;
+            if(inventory_open == 2)
+                inventory_open = 1;
+        }
 </string>
           </argument>
         </arguments>
@@ -340,15 +371,13 @@ y = ystart;
             <kind>1</kind>
             <string>/// Diaper meter draw
 
-//-if(diaperCustom &gt; spr_diaper_START)
-//-    {
+
 var tempIMG = floor((pee / maxPee) * 150);
 draw_sprite_ext(spr_peeGUI, tempIMG, 10, 10, image_xscale, image_yscale, 0, image_blend, 0.5);
 draw_sprite_ext(spr_actionButton, global.controlType, window_get_width() - 200, 10, image_xscale, image_yscale, 0, image_blend, 0.5);
-//-    }
-//- draw_set_colour(c_yellow);
-//- draw_set_alpha(0.5);
-//- draw_rectangle( window_get_width()-187, 103, window_get_width()-200+tempIMG, 114, false);
+
+
+
 
 if (global.devControls &gt; 9)
     {
@@ -357,6 +386,76 @@ if (global.devControls &gt; 9)
     draw_text(10, 40, "MaxPee: " + string(maxPee));
     
     }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Inventory draw
+
+if(inventory_open &gt; 0)
+    {
+        draw_sprite_ext(spr_inventory_panel,0, window_get_width() *0.5, window_get_height() *0.5, 1, 1, 0, image_blend, 1);
+    }
+
+
+
+/*-   cool code, but useless now
+if(inventory_open &gt; 0)
+    {
+        draw_set_colour(c_ltgray);
+        draw_set_alpha(0.5);
+        draw_rectangle(window_get_width() -430, window_get_height() -430, window_get_width() -51, window_get_height() -51, false);
+    
+        var i;
+        for (i = 0; i &lt; 25; i += 1)
+            {
+                var count5 = floor(i*0.2);
+                var xx = i -5*count5;
+
+                draw_sprite_ext(spr_inventory_block,0, window_get_width() -100 -70*xx, window_get_height() -100 -70*count5, 1, 1, 0, image_blend, 1);
+            }
+    }
+*/
+    
+//if (keyboard_check(ord("P")))
+//above is from Tut, but I wanted Tab instead
+
+if(!global.typing)
+{
+    if (keyboard_check(vk_home))
+    {
+        if (!instance_exists(obj_playerList))
+        {
+            instance_create(x, y, obj_playerList);
+        }
+    }
+    else
+    {
+        if (instance_exists(obj_playerList))
+        {
+            with(obj_playerList)
+            {
+                instance_destroy();
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -393,10 +492,10 @@ if(xx&gt;yy) { animSpeed += xx; }
 */
     
 
-if(animSpeed &lt; 10 ) { frames = 0; }    
-    if(animSpeed &gt; 9) { frames = 1; }
-    if(animSpeed &gt; 19) { frames = 0; }
-    if(animSpeed &gt;29) { frames = 2; }
+if(animSpeed &lt; 8 ) { frames = 0; }    
+    if(animSpeed &gt; 7) { frames = 1; }
+    if(animSpeed &gt; 15) { frames = 0; }
+    if(animSpeed &gt;23) { frames = 2; }
         
 if(state != "standing")
     {
@@ -405,12 +504,19 @@ if(state != "standing")
             {
                 animSpeed++;
             }
+        if (state2 == 0)  //create event, makes stutter steps animate more
+            {
+                animSpeed = animSpeed +2;
+                state2 = 1;
+            }
     }
-if(animSpeed &gt;= 40) { animSpeed = 0; }
+else state2 = 0;
+    
+if(animSpeed &gt;= 31) { animSpeed = 0; }
 
 
 //=============================================================================
-scr_avatar();
+scr_avatar_2();
 
 
 

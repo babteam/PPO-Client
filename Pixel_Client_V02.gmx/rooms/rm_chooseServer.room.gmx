@@ -19,12 +19,14 @@ global.playerPasswordHash = undefined;
 
 
 global.hairCustom = 1;
-global.outfitCustom = 1;
+global.outfitTopCustom = 1;
+global.outfitBottomCustom = 1;
 global.diaperCustom = 1;
 
     global.skinCol = make_colour_rgb(254, 219, 200);
     global.hairCol = make_colour_rgb(129, 104, 065);
-    global.outfitCol = make_colour_rgb(231, 125, 200);
+    global.outfitTopCol = make_colour_rgb(231, 125, 200);
+        global.outfitBottomCol = make_colour_rgb(231, 125, 200);
 
 audio_play_sound(snd_lobby, 10, true);
 

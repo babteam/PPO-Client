@@ -10,6 +10,7 @@
     <sound>sound\snd_CatapultFiring</sound>
     <sound>sound\snd_lobby</sound>
     <sound>sound\snd_house</sound>
+    <sound>sound\snd_dewey_voiceBloop</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="buttons">
@@ -42,20 +43,23 @@
         <sprites name="Diapers">
           <sprite>sprites\spr_diaper_START</sprite>
           <sprites name="CustomDiaper">
-            <sprite>sprites\spr_diaper_regular</sprite>
-            <sprite>sprites\spr_diaper_regular_wet</sprite>
-            <sprite>sprites\spr_diaper_regular_soggy</sprite>
+            <sprites name="regular">
+              <sprite>sprites\spr_diaper_regular</sprite>
+              <sprite>sprites\spr_diaper_regular_wet</sprite>
+              <sprite>sprites\spr_diaper_regular_soggy</sprite>
+            </sprites>
           </sprites>
           <sprite>sprites\spr_diaper_STOP</sprite>
         </sprites>
-        <sprites name="Outfits">
-          <sprite>sprites\spr_outfit_START</sprite>
+        <sprites name="Outfit Tops">
+          <sprite>sprites\spr_outfitTop_START</sprite>
           <sprites name="CustomOutfits">
-            <sprite>sprites\spr_outfit_plainDress</sprite>
-            <sprite>sprites\spr_outfit_plainShirt</sprite>
-            <sprite>sprites\spr_outfit_TEMP</sprite>
+            <sprite>sprites\spr_outfitTop_plainShirt</sprite>
           </sprites>
-          <sprite>sprites\spr_outfit_STOP</sprite>
+          <sprite>sprites\spr_outfitTop_STOP</sprite>
+          <sprites name="Arms">
+            <sprite>sprites\spr_outfit_Arms</sprite>
+          </sprites>
         </sprites>
         <sprites name="Hair">
           <sprite>sprites\spr_hair_START</sprite>
@@ -71,8 +75,28 @@
           <sprite>sprites\spr_walkLeft</sprite>
           <sprite>sprites\spr_walkDown</sprite>
           <sprite>sprites\spr_walkUp</sprite>
+          <sprite>sprites\spr_diaper_regular_backup</sprite>
+          <sprite>sprites\spr_diaper_regular_wet_backup</sprite>
+          <sprite>sprites\spr_diaper_regular_soggy_backup</sprite>
+          <sprite>sprites\spr_outfit_plainDress</sprite>
+          <sprite>sprites\spr_outfit_plainShirt</sprite>
+          <sprite>sprites\spr_hair_shortJagedOLD</sprite>
+          <sprite>sprites\spr_hair_pigtailsOLD</sprite>
+          <sprite>sprites\spr_hair_bigBunOld</sprite>
         </sprites>
         <sprite>sprites\spr_paperdoll_skin1</sprite>
+        <sprites name="mainBody">
+          <sprite>sprites\spr_paperDoll_Parts_lowBody_Side</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_upBody</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_upBody_Side</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_Arm</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_Head</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_Head_Back</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_Head_Side</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_Leg</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_LegSide</sprite>
+          <sprite>sprites\spr_paperDoll_Parts_lowBody</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_shadow</sprite>
       <sprites name="playerGUI">
@@ -81,6 +105,10 @@
       </sprites>
       <sprites name="spawnable">
         <sprite>sprites\spr_player_puddle</sprite>
+      </sprites>
+      <sprites name="Player_inventory">
+        <sprite>sprites\spr_inventory_block</sprite>
+        <sprite>sprites\spr_inventory_panel</sprite>
       </sprites>
     </sprites>
     <sprites name="playerBab">
@@ -114,6 +142,9 @@
     <sprite>sprites\spr_interact</sprite>
     <sprite>sprites\spr_screenFade</sprite>
     <sprite>sprites\spr_constructionSign</sprite>
+    <sprite>sprites\spr_Dialogue_box</sprite>
+    <sprite>sprites\spr_Dialogue_box_Duck</sprite>
+    <sprite>sprites\spr_testingStuff</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="houseBacks">
@@ -153,6 +184,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_versionNumber.gml</script>
     <script>scripts\scr_handleIncomingPackets.gml</script>
     <script>scripts\scr_showNotification.gml</script>
     <scripts name="playerControl">
@@ -176,12 +208,14 @@
     </scripts>
     <script>scripts\scr_scriptedMovement.gml</script>
     <script>scripts\scr_avatar.gml</script>
+    <script>scripts\scr_avatar_2.gml</script>
     <script>scripts\scr_textShadow.gml</script>
     <script>scripts\scr_gamepadCheck.gml</script>
     <script>scripts\__notes__.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
+    <font>fonts\fnt_Dialogue</font>
     <font>fonts\fnt_small</font>
     <font>fonts\fnt_chat</font>
   </fonts>
@@ -267,6 +301,8 @@
     </objects>
     <object>objects\obj_interactObject</object>
     <object>objects\obj_DUAL_START</object>
+    <object>objects\obj_dialogue</object>
+    <object>objects\obj_spriteTest</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Startup">

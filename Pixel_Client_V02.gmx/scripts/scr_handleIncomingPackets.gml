@@ -115,11 +115,14 @@ switch(msgid)
         var xx = buffer_read(buffer, buffer_f32);
         var yy = buffer_read(buffer, buffer_f32);
             var hair = buffer_read(buffer, buffer_u16);
-            var outfit = buffer_read(buffer, buffer_u16);
+            var outfitTop = buffer_read(buffer, buffer_u16);
+            var outfitBottom = buffer_read(buffer, buffer_u16);
             var diaper = buffer_read(buffer, buffer_u16);
             var colour = buffer_read(buffer, buffer_u32);
             var hairColour = buffer_read(buffer, buffer_u32);
-            var outfitColour = buffer_read(buffer, buffer_u32);
+            var outfitTopColour = buffer_read(buffer, buffer_u32);
+            var outfitBottomColour = buffer_read(buffer, buffer_u32);
+            var xxpeeHold = buffer_read(buffer, buffer_u8);
         var remoteFrames = buffer_read(buffer, buffer_u8);
         var d = buffer_read(buffer, buffer_u8);
         var rooms = buffer_read(buffer, buffer_u32);
@@ -146,11 +149,15 @@ switch(msgid)
                         self.yy = yy;
                         frames = remoteFrames;
                         hairCustom = hair;
-                        outfitCustom = outfit;
+                        outfitTopCustom = outfitTop;
+                        outfitBottomCustom = outfitBottom;
                         diaperCustom = diaper;
                         self.skinCol = colour;
                         self.hairCol = hairColour;
-                        self.outfitCol = outfitColour;
+                        self.outfitTopCol = outfitTopColour;
+                        self.outfitBottomCol = outfitTopColour;
+                        
+                        self.peeHold = xxpeeHold;
                         
                         switch (d)
                         {
@@ -287,11 +294,13 @@ switch(msgid)
     case 16: //recieve saved user apperance from server
 
         global.hairCustom = buffer_read(buffer, buffer_u16);
-        global.outfitCustom = buffer_read(buffer, buffer_u16);
+        global.outfitTopCustom = buffer_read(buffer, buffer_u16);
+        global.outfitBottomCustom = buffer_read(buffer, buffer_u16);
         global.diaperCustom = buffer_read(buffer, buffer_u16);
         global.skinCol = buffer_read(buffer, buffer_u32);
         global.hairCol = buffer_read(buffer, buffer_u32);
-        global.outfitCol = buffer_read(buffer, buffer_u32);
+        global.outfitTopCol = buffer_read(buffer, buffer_u32);
+        global.outfitBottomCol = buffer_read(buffer, buffer_u32);
         
         if instance_exists(obj_btn_loadCharacter)
             {

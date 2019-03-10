@@ -112,10 +112,21 @@ if(messageLife &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>draw_set_font(fnt_chat);
-draw_set_colour(c_white);
+draw_set_colour(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
+var xxx = string_width(text);
+xxx = xxx *0.5;
+
+draw_set_alpha(0.5);
+draw_roundrect( x -8 - xxx, y-12, x +8 + xxx, y+12, 0);
+draw_set_alpha(1);
+
+draw_text(x-2, y-1, text);
+draw_text(x+1, y+1, text);
+
+draw_set_colour(c_white);
 draw_text(x, y, text);
 </string>
           </argument>

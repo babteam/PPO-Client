@@ -71,11 +71,13 @@ if(global.inGame == 0)
     buffer_write(global.buffer, buffer_u8, 15);
     buffer_write(global.buffer, buffer_string, global.playerUsername);
     buffer_write(global.buffer, buffer_u16, global.hairCustom);
-    buffer_write(global.buffer, buffer_u16, global.outfitCustom);
+    buffer_write(global.buffer, buffer_u16, global.outfitTopCustom);
+        buffer_write(global.buffer, buffer_u16, global.outfitBottomCustom);
     buffer_write(global.buffer, buffer_u16, global.diaperCustom);
     buffer_write(global.buffer, buffer_u32, global.skinCol);
     buffer_write(global.buffer, buffer_u32, global.hairCol);
-    buffer_write(global.buffer, buffer_u32, global.outfitCol);
+    buffer_write(global.buffer, buffer_u32, global.outfitTopCol);
+        buffer_write(global.buffer, buffer_u32, global.outfitBottomCol);
     network_send_packet(obClient.socket, global.buffer, buffer_tell(global.buffer));
 </string>
           </argument>

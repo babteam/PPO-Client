@@ -28,7 +28,8 @@
             <string>
 
 hair = global.hairCustom;
-outfit = global.outfitCustom;
+outfitTop = global.outfitTopCustom;
+outfitBottom = global.outfitBottomCustom;
 </string>
           </argument>
         </arguments>
@@ -74,15 +75,38 @@ outfit = global.outfitCustom;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+            <string>/*-
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
     
 draw_sprite_ext(spr_paperdoll_skin1, 0, x, y+40, image_xscale, image_yscale, image_angle, global.skinCol, image_alpha);
 
 draw_sprite_ext(spr_diaper_regular, 0, x, y+40, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 
 draw_sprite_ext(spr_hair_START+global.hairCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.hairCol, image_alpha);
-draw_sprite_ext(spr_outfit_START+global.outfitCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.outfitCol, image_alpha);
+draw_sprite_ext(spr_outfit_START+global.outfitTopCustom, image_index, x, y+40, image_xscale, image_yscale, image_angle, global.outfitTopCol, image_alpha);
+*/
 
+draw_sprite_ext(sprite_index, image_index, x, y, 2, 2, image_angle, c_white, image_alpha);
+
+draw_sprite_ext(spr_paperDoll_Parts_Head, 0, x, y-80, 0.5, 0.5, image_angle, global.skinCol, image_alpha);
+    draw_sprite_ext(spr_hair_START + global.hairCustom, 0, x, y-80, 0.5, 0.5, image_angle, global.hairCol, image_alpha);
+    
+draw_sprite_ext(spr_paperDoll_Parts_upBody, 0, x, y-62, 0.5, 0.5, image_angle, global.skinCol, image_alpha);
+    draw_sprite_ext(spr_paperDoll_Parts_lowBody, 0, x, y-80, 0.5, 0.5, image_angle, global.skinCol, image_alpha);
+    
+draw_sprite_ext(spr_paperDoll_Parts_Leg, 0, x-6, y-40, 0.5, 0.5, image_angle, global.skinCol, image_alpha);
+    draw_sprite_ext(spr_paperDoll_Parts_Leg, 0, x+10, y-40, -0.5, 0.5, image_angle, global.skinCol, image_alpha);
+    
+draw_sprite_ext(spr_diaper_regular, 0, x, y-80, 0.5, 0.5, image_angle, image_blend, image_alpha);
+
+draw_sprite_ext(spr_outfitTop_START + global.outfitTopCustom, 0, x, y-80, 0.5, 0.5, image_angle, global.outfitTopCol, image_alpha);
+    
+
+draw_sprite_ext(spr_paperDoll_Parts_Arm, 0, x-10, y-84, 0.5, 0.5, image_angle, global.skinCol, image_alpha);
+    draw_sprite_ext(spr_paperDoll_Parts_Arm, 0, x+10, y-84, -0.5, 0.5, image_angle, global.skinCol, image_alpha);
+    
+    draw_sprite_ext(spr_outfit_Arms, global.outfitTopCustom, x-10, y-84, 0.5, 0.5, image_angle, global.outfitTopCol, image_alpha);
+    draw_sprite_ext(spr_outfit_Arms, global.outfitTopCustom, x+10, y-84, -0.5, 0.5, image_angle, global.outfitTopCol, image_alpha);
 </string>
           </argument>
         </arguments>

@@ -4,7 +4,7 @@ the //- comments are commented out code that is likely useless and can be delete
 and /*- is for bricks of old code
 
 
-
+use the frames of the body parts to swap in other bodies, like furries
 
 
 

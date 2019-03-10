@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize the client
 
-global.version = 2;
+scr_versionNumber();
 global.devControls = 0;
 
 network_set_config(network_config_connect_timeout, 5000);

@@ -23,3 +23,9 @@
     
 if (hydration > 1)
     hydration = hydration - 0.0001;
+    
+peeHold = 0;
+if (pee > maxPee *0.8)
+    {
+        peeHold = 1;
+    }

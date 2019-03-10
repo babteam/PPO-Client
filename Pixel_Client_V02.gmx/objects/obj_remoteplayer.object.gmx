@@ -37,13 +37,29 @@ xx = 0;
 yy = 0;
 
 hairCustom = 0;
-outfitCustom = 0;
+outfitTopCustom = 0;
+outfitBottomCustom = 0;
 diaperCustom = spr_diaper_START;
 
 //- make_colour_rgb(255, 255, 255);
 skinCol = 0;
 hairCol = 0;
-outfitCol = 0;
+outfitTopCol = 0;
+outfitBottomCol = 0;
+
+peeHold = 0;
+
+//==========================================================
+//=====       body animation variables      =====
+rightArmAngle = 0;
+leftArmAngle = 0;
+
+rightLegSquish = 1;
+leftLegSquish = 1;
+
+frames = 0;
+
+//==========================================================
 
 
 
@@ -95,7 +111,7 @@ y = (y+yy)*0.5;
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>scr_avatar</script>
+            <script>scr_avatar_2</script>
           </argument>
           <argument>
             <kind>0</kind>

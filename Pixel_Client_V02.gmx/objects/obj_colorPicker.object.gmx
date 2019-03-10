@@ -61,8 +61,8 @@ colorMessage = "skin"; //called in step event to send a message on variable chan
                 case "hair":
                     message = "Editing: Hair Color";
                     break;
-                case "outfit":
-                    message = "Editing: Outfit Color";
+                case "outfitTop":
+                    message = "Editing: Outfit Top Color";
                     break;
             }
         colorMessage = coloring;
@@ -109,8 +109,9 @@ switch (coloring)
         case "hair":
             global.hairCol = make_colour_rgb(red, green, blue);
             break;
-        case "outfit":
-            global.outfitCol = make_colour_rgb(red, green, blue);
+        case "outfitTop":
+            global.outfitTopCol = make_colour_rgb(red, green, blue);
+            global.outfitBottomCol = make_colour_rgb(red, green, blue);
             break;
     }
 
